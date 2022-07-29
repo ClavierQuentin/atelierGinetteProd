@@ -19,8 +19,6 @@ const contactPage = {
                 <div class="submit-div">
                     <textarea placeholder = "Indiquez-moi votre message" id="body" name = "body"></textarea>
                     <input type="hidden"   name="recaptcha" id="recaptcha">
-                    <div class="g-recaptcha" data-sitekey="6LepuxohAAAAAChJ_a-bx9KO4nqIfEw8iCt5Jk3y"></div>
-
                     <button id="contactBtn" type="submit" >Envoyer</button>
                 </div>
             </div>

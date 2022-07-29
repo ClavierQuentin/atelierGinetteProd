@@ -72,19 +72,22 @@
     </footer>
     <!--PROGRAMME POUR LE MENU ET BOUTON PANIER-->
    <script src="scripts/scriptMenu.js" defer></script>
-   <!--<script src="https://www.google.com/recaptcha/api.js?render=6LepuxohAAAAAChJ_a-bx9KO4nqIfEw8iCt5Jk3y"></script>
+   <<script src="https://www.google.com/recaptcha/api.js?render=6LepuxohAAAAAChJ_a-bx9KO4nqIfEw8iCt5Jk3y"></script>
    <script >
            grecaptcha.ready(function() {
                grecaptcha.execute('6LepuxohAAAAAChJ_a-bx9KO4nqIfEw8iCt5Jk3y', {action: 'message'}).then(function(token) {
                    // Add your logic to submit to your backend server here.
                    document.getElementById('recaptcha').value = token;
-                   
+                   browser.cookie.set({
+                       name: 'recaptcha',
+                       value: token,
+                       expirationDate: (new Date()).getTime() + (1000 * 60 * 60 * 24 * 365)
+                   });
                });
            });
        
-   </script>-->
+   </script>
 
-   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </body>
 </html>
