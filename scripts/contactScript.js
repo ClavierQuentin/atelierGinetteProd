@@ -1,6 +1,7 @@
 const contact = () => {
    
-    document.getElementById('contactForm').addEventListener('submit', (e) => {       
+    document.getElementById('contactForm').addEventListener('submit', (e) => {     
+        let message = document.getElementById('message');  
         e.preventDefault(); 
         let data = {
             data : {
@@ -24,6 +25,9 @@ const contact = () => {
         fetch('http://localhost:1337/api/messages', Init)
         .then((res) => {
             console.log(res);
+            if(res.status === 200){
+                message.innerHTML = "Votre message a bien été envoyé";
+            }
         })
         .catch((err) => {
             console.log(err);

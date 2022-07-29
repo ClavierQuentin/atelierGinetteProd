@@ -710,11 +710,6 @@ gap: 35px;
 /*--------------------------PAGE CONTACT----------------------------------*/
 .conteneurContact{
     background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 50vh;
-    justify-content: center;
 }
 .conteneurContact h2{
     margin: 10px 0;
@@ -725,10 +720,21 @@ gap: 35px;
     flex-direction: column;
     gap: 10px;
     justify-content: center;
+    margin: auto;
+    padding: 2% 0;
+    width: 50%;
 }
+
+.containerForm{
+    display: flex;
+    flex-direction: column;
+    margin:auto;
+}
+
 .conteneurContact input{
     border: 1px #f8cbc6 solid;
-    
+    padding: 2px;
+    margin: 5px 0;
 }
 .conteneurContact textarea{
     border: 1px #f8cbc6 solid;
@@ -738,11 +744,19 @@ gap: 35px;
     flex-direction: column;
     gap: 10px;
 }
-.submit-div #contactBtn{
+#contactBtn{
+    display: block;
     background-color: #f8cbc6;
     border: none;
     padding: 15px 40px;
     margin-top: 10px;
     font-size: 18px;
     color: white;
+}
+@media screen and (max-width:500px) {
+    .conteneurContact form{
+        width: 90%;
+    }
+}
+    
 }

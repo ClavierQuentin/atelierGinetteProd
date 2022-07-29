@@ -5,7 +5,6 @@ const request = parseRequestUrl();
 const productPage = {
     generate: () =>{
         let main = document.getElementById('main-conteneur');
-        console.log(request.id);
         fetch(`http://localhost:1337/api/articles/${request.id}?populate=*`,{
             headers:{
                 "Content-Type":"application/json",
