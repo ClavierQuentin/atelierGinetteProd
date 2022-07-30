@@ -5,7 +5,7 @@ const homePage = {
         let main = document.getElementById('main-conteneur');
         const conteneurName = document.getElementById('conteneurName');
     
-        fetch('http://localhost:1337/api/categories?populate[articles][populate][0]=image&populate=image_categories',{
+        fetch('https://frozen-hollows-86473.herokuapp.com/api/categories?populate[articles][populate][0]=image&populate=image_categories',{
             headers:{
                 "Content-Type":"application/json",
             }
@@ -17,7 +17,7 @@ const homePage = {
         })
         .then(function(data){
             const listeCategories = data.data;
-            fetch('http://localhost:1337/api/texte-accueils', {
+            fetch('https://frozen-hollows-86473.herokuapp.com/api/texte-accueils', {
                 headers:{
                     "Content-Type":"application/json",
                 }
@@ -60,7 +60,7 @@ const homePage = {
                     <a href="#/pages/categories/${listeCategories[0].id}" >
                         <div>
                             <div class="divImg">
-                                <img class="imgCategorie" src="http://localhost:1337${listeCategories[0].attributes.image_categories.data[0].attributes.formats.medium.url}" alt="">
+                                <img class="imgCategorie" src="https://frozen-hollows-86473.herokuapp.com${listeCategories[0].attributes.image_categories.data[0].attributes.formats.medium.url}" alt="">
                             </div
                             <label for="">${listeCategories[0].attributes.nom_categorie}</label>
                         </div>
@@ -70,7 +70,7 @@ const homePage = {
                     <a href="#/pages/categories/${listeCategories[1].id}" >
                         <div>
                             <div class="divImg">
-                                <img class="imgCategorie" src="http://localhost:1337${listeCategories[1].attributes.image_categories.data[0].attributes.formats.medium.url}" alt="">
+                                <img class="imgCategorie" src="https://frozen-hollows-86473.herokuapp.com${listeCategories[1].attributes.image_categories.data[0].attributes.formats.medium.url}" alt="">
                             </div>
                             <label for="">${listeCategories[1].attributes.nom_categorie}</label>
                         </div>
@@ -80,7 +80,7 @@ const homePage = {
                     <a href="#/pages/categories/${listeCategories[2].id}" >
                         <div>
                             <div class="divImg">
-                                <img class="imgCategorie" src="http://localhost:1337${listeCategories[2].attributes.image_categories.data[0].attributes.formats.medium.url}" alt="">
+                                <img class="imgCategorie" src="https://frozen-hollows-86473.herokuapp.com${listeCategories[2].attributes.image_categories.data[0].attributes.formats.medium.url}" alt="">
                             </div>
                             <label for="">${listeCategories[2].attributes.nom_categorie}</label>
                         </div>
@@ -90,7 +90,7 @@ const homePage = {
                     <a href="#/pages/categories/${listeCategories[4].id}" >
                         <div>
                         <div class="divImg">
-                                <img class="imgCategorie" src="http://localhost:1337${listeCategories[3].attributes.image_categories.data[0].attributes.formats.medium.url}" alt="">
+                                <img class="imgCategorie" src="https://frozen-hollows-86473.herokuapp.com${listeCategories[3].attributes.image_categories.data[0].attributes.formats.medium.url}" alt="">
                         </div>
                         <label for="">${listeCategories[4].attributes.nom_categorie}</label>
                         </div>

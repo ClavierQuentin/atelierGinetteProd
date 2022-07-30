@@ -22,7 +22,7 @@ const contact = () => {
             cache: "default",
             body: JSON.stringify(data)
         }
-        fetch('http://localhost:1337/api/messages', Init)
+        fetch('https://frozen-hollows-86473.herokuapp.com/api/messages', Init)
         .then((res) => {
             console.log(res);
             if(res.status === 200){

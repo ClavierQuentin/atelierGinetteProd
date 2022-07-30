@@ -5,7 +5,7 @@ const request = parseRequestUrl();
 const productPage = {
     generate: () =>{
         let main = document.getElementById('main-conteneur');
-        fetch(`http://localhost:1337/api/articles/${request.id}?populate=*`,{
+        fetch(`https://frozen-hollows-86473.herokuapp.com/api/articles/${request.id}?populate=*`,{
             headers:{
                 "Content-Type":"application/json",
             }
@@ -20,7 +20,7 @@ const productPage = {
             main.innerHTML = `
             <div class="backGroundFleur">
                 <div class="sectionPhoto">
-                    <img src="http://localhost:1337${produit.attributes.image.data[0].attributes.formats.small.url}" alt="" class="imgProduitUnique">
+                    <img src="https://frozen-hollows-86473.herokuapp.com${produit.attributes.image.data[0].attributes.formats.small.url}" alt="" class="imgProduitUnique">
                     <div class="description1">
                         <h2>${produit.attributes.nom_article}</h2>
                         <div class="prix">

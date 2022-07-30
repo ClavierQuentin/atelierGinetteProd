@@ -35,7 +35,7 @@ const aboutPage = {
                 </div>
                 <!--IMAGE-->
                 <div class="portrait">
-                    <img src="http://localhost:1337${ban1[ban1.length-1].attributes.image.data.attributes.formats.small.url}" alt="">
+                    <img src="https://frozen-hollows-86473.herokuapp.com${ban1[ban1.length-1].attributes.image.data.attributes.formats.small.url}" alt="">
                 </div>
             </div>
             <!---------------------------------BANNIERE LIEU-------------------------------->
@@ -65,14 +65,14 @@ const aboutPage = {
                         </div>
                         <!--IMAGE-->
                         <div>
-                            <img class="paysage" src="http://localhost:1337${ban3[ban3.length - 1].attributes.Image.data.attributes.formats.small.url}" alt="">
+                            <img class="paysage" src="https://frozen-hollows-86473.herokuapp.com${ban3[ban3.length - 1].attributes.Image.data.attributes.formats.small.url}" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="banniere wrapReverse" style="padding-bottom: 80px;">
                     <!--IMAGE-->
                     <div>
-                        <img class="paysage rotate" src="http://localhost:1337${ban4[ban4.length - 1].attributes.Image.data.attributes.formats.small.url}" alt="">
+                        <img class="paysage rotate" src="https://frozen-hollows-86473.herokuapp.com${ban4[ban4.length - 1].attributes.Image.data.attributes.formats.small.url}" alt="">
                     </div>
                     <div class="divTexte">
                         <!--TITRE-->

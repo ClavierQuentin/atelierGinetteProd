@@ -22,7 +22,7 @@ const categories = {
                         listeCategories =>`
                             <a href="#/pages/categories/${listeCategories.id}" onclick="location.reload()" class="card">
                                 <div class="conteneurImgCard">
-                                    <img class="imgCardProduit" src="http://localhost:1337${listeCategories.attributes.image_categories.data[listeCategories.attributes.image_categories.data.length-1].attributes.formats.small.url}" alt="">
+                                    <img class="imgCardProduit" src="https://frozen-hollows-86473.herokuapp.com${listeCategories.attributes.image_categories.data[listeCategories.attributes.image_categories.data.length-1].attributes.formats.small.url}" alt="">
                                 </div>
                                 <label>${listeCategories.attributes.nom_categorie}</label>
                             </a>

@@ -24,7 +24,7 @@ export const fonctionCarrousel = (data) => {
                 //On crée un élément img
                 let photo = document.createElement('img');
                 //On y modifie l'id et src selon le array
-                photo.src = "http://localhost:1337"+listeCarrou[i].url;
+                photo.src = "https://frozen-hollows-86473.herokuapp.com"+listeCarrou[i].url;
                 photo.id = listeCarrou[i].id;
                 //On donne à l'image la largeur de l'écran
                 photo.style.minWidth = largeurEcran+"px";
