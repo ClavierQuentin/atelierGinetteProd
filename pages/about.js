@@ -72,7 +72,7 @@ const aboutPage = {
                 <div class="banniere wrapReverse" style="padding-bottom: 80px;">
                     <!--IMAGE-->
                     <div>
-                        <img class="paysage" src="${ban4[ban4.length - 1].attributes.Image.data.attributes.formats.small.url}" alt="">
+                        <img style="width=333px; height:auto;" src="${ban4[ban4.length - 1].attributes.Image.data.attributes.formats.small.url}" alt="">
                     </div>
                     <div class="divTexte">
                         <!--TITRE-->
