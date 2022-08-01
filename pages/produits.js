@@ -28,7 +28,7 @@ const produits = {
                     produit =>`
                             <a href="#/pages/produit/${produit.id}" onclick="location.reload()" class="cardProduit">
                                 <div class="conteneurImgProduit">
-                                    <img class="imgProduit" src="https://frozen-hollows-86473.herokuapp.com${produit.attributes.image.data[0].attributes.formats.small.url}" alt="">
+                                    <img class="imgProduit" src="${produit.attributes.image.data[0].attributes.formats.small.url}" alt="">
                                 </div>
                                 <label>${produit.attributes.nom_article}</label>
                                 <label>${produit.attributes.prix_article}€</label>

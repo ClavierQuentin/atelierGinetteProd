@@ -20,7 +20,7 @@ const productPage = {
             main.innerHTML = `
             <div class="backGroundFleur">
                 <div class="sectionPhoto">
-                    <img src="https://frozen-hollows-86473.herokuapp.com${produit.attributes.image.data[0].attributes.formats.small.url}" alt="" class="imgProduitUnique">
+                    <img src="${produit.attributes.image.data[0].attributes.formats.small.url}" alt="" class="imgProduitUnique">
                     <div class="description1">
                         <h2>${produit.attributes.nom_article}</h2>
                         <div class="prix">

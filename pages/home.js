@@ -60,7 +60,7 @@ const homePage = {
                     <a href="#/pages/categories/${listeCategories[0].id}" >
                         <div>
                             <div class="divImg">
-                                <img class="imgCategorie" src="https://frozen-hollows-86473.herokuapp.com${listeCategories[0].attributes.image_categories.data[0].attributes.formats.medium.url}" alt="">
+                                <img class="imgCategorie" src="${listeCategories[0].attributes.image_categories.data[0].attributes.formats.medium.url}" alt="">
                             </div
                             <label for="">${listeCategories[0].attributes.nom_categorie}</label>
                         </div>
@@ -70,7 +70,7 @@ const homePage = {
                     <a href="#/pages/categories/${listeCategories[1].id}" >
                         <div>
                             <div class="divImg">
-                                <img class="imgCategorie" src="https://frozen-hollows-86473.herokuapp.com${listeCategories[1].attributes.image_categories.data[0].attributes.formats.medium.url}" alt="">
+                                <img class="imgCategorie" src="${listeCategories[1].attributes.image_categories.data[0].attributes.formats.medium.url}" alt="">
                             </div>
                             <label for="">${listeCategories[1].attributes.nom_categorie}</label>
                         </div>
@@ -80,7 +80,7 @@ const homePage = {
                     <a href="#/pages/categories/${listeCategories[2].id}" >
                         <div>
                             <div class="divImg">
-                                <img class="imgCategorie" src="https://frozen-hollows-86473.herokuapp.com${listeCategories[2].attributes.image_categories.data[0].attributes.formats.medium.url}" alt="">
+                                <img class="imgCategorie" src="${listeCategories[2].attributes.image_categories.data[0].attributes.formats.medium.url}" alt="">
                             </div>
                             <label for="">${listeCategories[2].attributes.nom_categorie}</label>
                         </div>
@@ -90,7 +90,7 @@ const homePage = {
                     <a href="#/pages/categories/${listeCategories[4].id}" >
                         <div>
                         <div class="divImg">
-                                <img class="imgCategorie" src="https://frozen-hollows-86473.herokuapp.com${listeCategories[3].attributes.image_categories.data[0].attributes.formats.medium.url}" alt="">
+                                <img class="imgCategorie" src="${listeCategories[3].attributes.image_categories.data[0].attributes.formats.medium.url}" alt="">
                         </div>
                         <label for="">${listeCategories[4].attributes.nom_categorie}</label>
                         </div>

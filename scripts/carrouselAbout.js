@@ -13,7 +13,7 @@ const carrouselAbout = (data) => {
     //Pour la taille du tableau, on implémente le src et la classe aux images
         for(let i = 0; i < listeImages.length; i++){
             let photoPrez = document.createElement('img');
-            photoPrez.src = "https://frozen-hollows-86473.herokuapp.com"+listeImages[i].attributes.formats.medium.url;
+            photoPrez.src = listeImages[i].attributes.formats.medium.url;
             photoPrez.classList.add('tailleImg');
             carrouselPrez.appendChild(photoPrez);
         }
