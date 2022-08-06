@@ -22,12 +22,12 @@
     <script src="http://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>-->
 
 <body>
-    <!--<div id="panier" class="panier">
+    <div id="panier" class="panier">
         <h3>Panier</h3>
         <hr>
         <div id="emptyBasket" class="divPanier"></div>
-        <button onclick="document.location.hash = '/pages/panier'">Accéder au panier</button>
-    </div>-->
+        <button id="btnPagePanier" onclick="document.location.hash = '/panier'">Accéder au panier</button>
+    </div>
     <!-------------------------------------------------TITRE ET MENU----------------------------------------->
     <!--BLOC TITRE-->
     <div id="conteneurName" class="conteneurName">
@@ -38,9 +38,10 @@
         <div class="menu" id="menu">
         </div>
     </div> 
-    <!--<div id="blocPanier" class="blocPanier">
+    <div id="blocPanier" class="blocPanier">
+        <div id="counter" class="panierCompteur"></div>
         <img width="40px" src="./img/icons8-shopping-trolley-64.png" alt="">
-    </div>-->
+    </div>
     <!----------------------------------------------PAGE DE NAVIGATION------------------------------------------------------------------>
     <nav>
             <p>
@@ -74,12 +75,12 @@
    <script src="scripts/scriptMenu.js" defer></script>
    <<script src="https://www.google.com/recaptcha/api.js?render=6LepuxohAAAAAChJ_a-bx9KO4nqIfEw8iCt5Jk3y"></script>
    <script >
-           grecaptcha.ready(function() {
-               grecaptcha.execute('6LepuxohAAAAAChJ_a-bx9KO4nqIfEw8iCt5Jk3y', {action: 'message'}).then(function(token) {
-                   // Add your logic to submit to your backend server here.
-                   document.cookie = "token=" + token;
-               });
-           });
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6LepuxohAAAAAChJ_a-bx9KO4nqIfEw8iCt5Jk3y', {action: 'message'}).then(function(token) {
+                // Add your logic to submit to your backend server here.
+                document.cookie = "token=" + token;
+            });
+        });
        
    </script>
 

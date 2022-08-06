@@ -35,6 +35,11 @@ h4{
 .backGroundFleur{
     background-color: white;
 }
+.colonneAlignee{
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+}
     /*----------------------------Barre de navigation-----------------*/
     nav{
         display: none;
@@ -75,7 +80,7 @@ h4{
     z-index: 6000;
     width: 500px;
     max-width: 80vw;
-    /*height: 100vh;*/
+    max-height: 90vh;
     background-color: rgba(255, 255, 255, 0.9);
     transition: 1s;
     display: flex;
@@ -83,6 +88,7 @@ h4{
     align-items: center;
     gap: 2%;
     padding: 20px 0;
+    overflow: auto;
 }
 .panier button{
     border: 0;
@@ -116,6 +122,22 @@ h4{
     cursor: pointer;
     color: white;
 }
+.panierCompteur{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-color: #f8cbc6;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
 .affichagePanier{
 transform: translateX(500px);
 }
@@ -585,6 +607,10 @@ header{
     margin: 35px;
     text-align: justify;
 }
+#produitPresent{
+    color: red;
+    display: none;
+}
 @media screen and (max-width:500px) {
     .description1{
         width: 100%;
@@ -759,4 +785,13 @@ gap: 35px;
     }
 }
     
+/*--------------------------PANIER----------------------------------*/
+.delete-button{
+    background-color: #f8cbc6;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 18px;
+    color: white;
+    max-width: 150px;
 }

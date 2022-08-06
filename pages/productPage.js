@@ -1,4 +1,4 @@
-import { parseRequestUrl } from "../utils.js";
+import { parseRequestUrl, getPanier, setPanier, ajouterAuPanier  } from "../utils.js";
 
 const request = parseRequestUrl();
 
@@ -31,7 +31,8 @@ const productPage = {
                         <div class="descriptionCourte">
                                 ${produit.attributes.description_courte} 
                         </div>
-                    <!-- <div><button id="boutonAjouter">Ajouter au panier</button></div>-->
+                        <div id="produitPresent">Produit déjà sélectionné</div>
+                    <div><button id="boutonAjouter">Ajouter au panier</button></div>
                     </div>
                 </div>
                 <hr>
@@ -44,6 +45,16 @@ const productPage = {
                 </div>-->
             </div>
             `
+            document.getElementById("boutonAjouter").addEventListener('click', () =>{
+                ajouterAuPanier({
+                    "id": request.id,
+                    "nom": produit.attributes.nom_article,
+                    "img": produit.attributes.image.data[0].attributes.formats.small.url,
+                    "prix": produit.attributes.prix_article,
+                    "qte": 1
+                });
+
+            })
         })
         .catch((err)=>{
             console.log(err);

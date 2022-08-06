@@ -106,8 +106,15 @@ blocPanier.addEventListener('click', () => {
     }
 })
 
+document.getElementById('btnPagePanier').addEventListener("click", () => {
+    document.location.hash = '/panier';
+    panier.classList.remove('affichagePanier')
+    panierClique = false
+
+})
+
 let divPanier = document.getElementById('emptyBasket');
-let panierItems =JSON.parse(localStorage.getItem('panierItems'));
+let panierItems = sessionStorage.getItem("panier")? JSON.parse(sessionStorage.getItem("panier")) : [];
 function genererPanier(){
     if(panierItems.length > 0){
         for(let y= 0; y< panierItems.length; y++){
@@ -116,7 +123,7 @@ function genererPanier(){
             divPanier.appendChild(divProduit)
 
             let img = document.createElement('img');
-            img.src = panierItems[y].image;
+            img.src = panierItems[y].img;
             img.classList.add('imgProduitPanierDefilant')
             divProduit.appendChild(img)
 
@@ -132,17 +139,15 @@ function genererPanier(){
             prix.textContent = panierItems[y].prix + "€" ;
             divDescription.appendChild(prix)
             
-            let quantite = document.createElement('p')
-            quantite.textContent = "Qté :" + panierItems[y].qte
-            divDescription.appendChild(quantite)
         }
-        /*let button = document.createElement("button");
-        button.textContent = "Acceder au panier"
-        button.onclick = "document.location.hash = '/pages/panier'"
-        divPanier.appendChild(button)*/
+        document.getElementById("counter").textContent = panierItems.length;
+        let paraTotal = document.createElement("p");
+        paraTotal.innerHTML = "Sous-total : " + panierItems.reduce((a, b) => a+b.prix, 0) + " €";
+        divPanier.appendChild(paraTotal);
     }
     else{
-        divPanier.innerHTML = "Votre panier est vide"
+        divPanier.innerHTML = "Votre panier est vide";
+        document.getElementById("counter").style.visibility = "hidden";
     }
 }
-genererPanier();
+ genererPanier();

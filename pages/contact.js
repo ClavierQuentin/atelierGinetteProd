@@ -2,9 +2,11 @@ import { contact } from "../scripts/contactScript.js";
 
 const contactPage = {
     generate: () =>{
+
         let cookieValue = document.cookie.split(';')[0].split('=')[1];
         let main = document.getElementById('main-conteneur');
         const conteneurName = document.getElementById('conteneurName');
+        console.log(cookieValue);
         main.innerHTML = `
         <div class="conteneurContact backGroundFleur" >
         <form id="contactForm" name="contactForm" method="post" action="message">
