@@ -9,7 +9,6 @@ const contactPage = {
                // let cookieValue = document.cookie.split(';')[0].split('=')[1];
                 let main = document.getElementById('main-conteneur');
                 const conteneurName = document.getElementById('conteneurName');
-                
                 main.innerHTML = `
                 <div class="conteneurContact backGroundFleur" >
                 <form id="contactForm" name="contactForm" method="post" action="message">
@@ -42,7 +41,6 @@ const contactPage = {
                 </div>
                 `
                 contact();
-                console.log(token);
                 conteneurName.style.position = "relative";      
             })
         })

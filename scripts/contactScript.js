@@ -13,7 +13,6 @@ const contact = () => {
                 'recaptcha': document.getElementById('recaptcha').value
             }
         }
-        console.log(data.data.recaptcha)
         const headers = new Headers();
         headers.append('Content-Type', 'application/json');
         const Init = {
