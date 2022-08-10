@@ -758,7 +758,8 @@ gap: 35px;
 }
 
 .conteneurContact input{
-    border: 1px #f8cbc6 solid;
+    border: none;
+    border-bottom: 1px #f8cbc6 solid;
     padding: 2px;
     margin: 5px 0;
 }
