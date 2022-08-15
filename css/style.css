@@ -734,9 +734,7 @@ gap: 35px;
 }
 
 /*--------------------------PAGE CONTACT----------------------------------*/
-.conteneurContact{
-    background-color: white;
-}
+
 .conteneurContact h2{
     margin: 10px 0;
     font-size: 28px;
@@ -795,4 +793,45 @@ gap: 35px;
     font-size: 18px;
     color: white;
     max-width: 150px;
+}
+.divRegister{
+    padding: 2%;
+}
+
+.divRegister form{
+    margin: auto;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.divRegister input{
+    border: none;
+    border-bottom: 1px #f8cbc6 solid;
+    padding: 2px;
+    margin: 5px 0;
+}
+
+#registerBtn{
+    display: block;
+    background-color: #f8cbc6;
+    border: none;
+    padding: 15px 40px;
+    margin-top: 10px;
+    font-size: 18px;
+    color: white;
+}
+.divBtn{
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    justify-content: space-around;
+}
+.divInput{
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    justify-content: space-between;
+    margin: 5px 0;
 }

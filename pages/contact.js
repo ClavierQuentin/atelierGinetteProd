@@ -42,7 +42,6 @@ const contactPage = {
                 </div>
                 `
                 contact();
-                console.log(token);
                 conteneurName.style.position = "relative";
         
             });

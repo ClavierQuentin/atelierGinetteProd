@@ -5,6 +5,7 @@ import homePage from "./pages/home.js";
 import productPage from "./pages/productPage.js";
 import produits from "./pages/produits.js";
 import panier from "./pages/panier.js";
+import registerPage from "./pages/register.js";
 
 
 import { parseRequestUrl } from "./utils.js";
@@ -18,7 +19,8 @@ const routes = {
     "/pages/categories/id": produits,
     "/pages/produit/id": productPage,
     "/contact": contactPage,
-    "/panier": panier
+    "/panier": panier,
+    "/register": registerPage
 }
 
 const router = () =>{  
