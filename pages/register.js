@@ -23,7 +23,7 @@ const registerPage = {
                                 </div>
                             </div>
                             <div class="divBtn">
-                                <button id = "registerBtn" type="submit">S'inscrire</button>
+                                <button class="btn" id = "registerBtn" type="submit">S'inscrire</button>
                                 <div>
                                     <a href="#">Retour à l'accueil</a>
                                 </div>

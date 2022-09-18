@@ -33,6 +33,7 @@ const productPage = {
                         </div>
                         <div id="produitPresent">Produit déjà sélectionné</div>
                     <div><button id="boutonAjouter">Ajouter au panier</button></div>
+                    <button class="css style" type="button" class="SS_ProductCheckout" data-id="1" data-url="http://localhost:1337"> BuyNow </button> 
                     </div>
                 </div>
                 <hr>

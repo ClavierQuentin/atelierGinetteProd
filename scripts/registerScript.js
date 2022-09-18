@@ -23,8 +23,6 @@ const register = () => {
         .then(response => {
             if(response.status == 200){
                 document.getElementById("success").innerHTML = "Votre compte a bien été créée"
-                console.log('User profile', response.data.user);
-                console.log('User token', response.data.jwt);
             }
             return response.json()       
         })

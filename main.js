@@ -10,6 +10,8 @@ import registerPage from "./pages/register.js";
 
 import { parseRequestUrl } from "./utils.js";
 
+import loginPage from "./pages/login.js";
+
 
 const routes = {
     "/" : homePage,
@@ -20,7 +22,8 @@ const routes = {
     "/pages/produit/id": productPage,
     "/contact": contactPage,
     "/panier": panier,
-    "/register": registerPage
+    "/register": registerPage,
+    "/login": loginPage
 }
 
 const router = () =>{  

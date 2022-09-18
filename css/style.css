@@ -813,7 +813,7 @@ gap: 35px;
     margin: 5px 0;
 }
 
-#registerBtn{
+.btn{
     display: block;
     background-color: #f8cbc6;
     border: none;
