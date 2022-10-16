@@ -15,13 +15,20 @@ const routes = {
     "/pages/categories": categories,
     "/pages/categories/id": produits,
     "/pages/produit/id": productPage,
-    "/contact": contactPage
+    "/contact": contactPage,
+    "/pages/admin":true
 }
 
 const router = () =>{  
     const request = parseRequestUrl();
     const parseUrl = (request.page? `/${request.page}` : '/') + (request.destination? `/${request.destination}` : "") + (request.id? `/id` : "");
     const screen = routes[parseUrl]? routes[parseUrl] : "";
+
+    //Controle pour le passage au dashboard back
+    if(request.destination == "admin"){
+        location.assign('https://api-atelier-dev-dashboard.herokuapp.com/');
+    }
+        
     screen.generate();
 }
 window.addEventListener('load', () =>{
