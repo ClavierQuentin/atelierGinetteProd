@@ -54,6 +54,7 @@ const contactPage = {
                         </div>
                         `
                         contact();
+                        conteneurName.style.position = "relative";
                     } else{
 
                         main.innerHTML = `
