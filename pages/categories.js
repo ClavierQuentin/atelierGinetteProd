@@ -11,7 +11,7 @@ const categories = {
             }
         })
         .then((data) => {
-            const listeCategories = data.data;
+            const listeCategories = data;
             main.innerHTML = `
             <div class="sectionProduits backGroundFleur">
                 <div class="titreProduits">
@@ -22,9 +22,9 @@ const categories = {
                         listeCategories =>`
                             <a href="#/pages/categories/${listeCategories.id}" onclick="location.reload()" class="card">
                                 <div class="conteneurImgCard">
-                                    <img class="imgCardProduit" src="${listeCategories.attributes.image_categories.data[listeCategories.attributes.image_categories.data.length-1].attributes.formats.small.url}" alt="">
+                                    <img class="imgCardProduit" src="${listeCategories.url_image_categorie}" alt="">
                                 </div>
-                                <label>${listeCategories.attributes.nom_categorie}</label>
+                                <label>${listeCategories.nom_categorie}</label>
                             </a>
                         `
                     ).join('\n')}

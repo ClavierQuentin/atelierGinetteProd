@@ -15,24 +15,24 @@ const contactPage = {
                     <h2>Contactez-moi !</h2>
                     <div class="containerForm">
                         <div>
-                            <label for="prenom">Prénom</label>
-                            <input type="text" name="prenom" id="prenom" placeholder="Votre prénom">
+                             <!--<label for="prenom">Prénom</label>-->
+                            <input type="text" name="prenom" id="prenom" placeholder="Votre prénom" class="firstInput" required>
         
-                            <label for="nom">Nom</label>
-                            <input type="text" name="nom" id="nom" placeholder="Votre nom">
+                            <!--<label for="nom">Nom</label>-->
+                            <input type="text" name="nom" id="nom" placeholder="Votre nom" class="firstInput" required>
                         </div>
-                        <label for="sujet">Sujet</label>
-                        <input type="text" name="sujet" id="sujet" placeholder="Sujet du message">
+                        <!--<label for="sujet">Sujet</label>-->
+                        <input type="text" name="sujet" id="sujet" placeholder="Sujet du message" required>
         
-                        <label for="email">Email</label>
-                        <input type="email" name="email" placeholder="Votre email" id="email">
+                        <!--<label for="email">Email</label>-->
+                        <input type="email" name="email" placeholder="Votre email" id="email" required>
                         
-                        <label for="body">Message</label>
-                            <textarea placeholder = "Indiquez-moi votre message" id="body" name = "body"></textarea>
+                        <!--<label for="body">Message</label>-->
+                            <textarea placeholder = "Indiquez-moi votre message" id="body" name = "body" required></textarea>
                             <input type="hidden"   name="recaptcha" id="recaptcha" value="${token}">
                         <div class="divRGPD">
                                 <input required type="checkbox" name="rgpd" id="rgpd" >
-                                <label for="rgpd">J'autorise ce site à conserver mes données personnelles transmises via ce formulaire. Aucune exploitation commerciale ne sera faite des données conservée.</label>
+                                <label for="rgpd">J'autorise ce site à conserver mes données personnelles transmises via ce formulaire. Aucune exploitation commerciale ne sera faite des données conservée.s</label>
                         </div>
                             <button id="contactBtn" type="submit" >Envoyer</button>
                     </div>

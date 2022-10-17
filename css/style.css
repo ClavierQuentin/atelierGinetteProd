@@ -722,7 +722,7 @@ gap: 35px;
     justify-content: center;
     margin: auto;
     padding: 2% 0;
-    width: 50%;
+    width: 33%;
 }
 
 .containerForm{
@@ -730,14 +730,26 @@ gap: 35px;
     flex-direction: column;
     margin:auto;
 }
+.firstInput{
+    margin-right: 10px;
+    /* margin-left: 10px; */
+}
 
 .conteneurContact input{
     border: 1px #f8cbc6 solid;
     padding: 2px;
-    margin: 5px 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+.conteneurContact input::placeholder, .conteneurContact textarea::placeholder{
+    color: black;
+    font-weight: bold;
 }
 .conteneurContact textarea{
     border: 1px #f8cbc6 solid;
+    border-radius: 4px;
+    margin: 10px 0;
 }
 .submit-div{
     display: flex;

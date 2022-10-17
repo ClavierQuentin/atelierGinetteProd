@@ -1,4 +1,4 @@
-import { parseRequestUrl } from "../utils.js";
+import { parseRequestUrl,url } from "../utils.js";
 
 const request = parseRequestUrl();
 
@@ -6,7 +6,7 @@ const produits = {
     generate: () => {
         let main = document.getElementById('main-conteneur');
         const conteneurName = document.getElementById('conteneurName');
-        fetch(`https://frozen-hollows-86473.herokuapp.com/api/categories/${request.id}?populate[articles][populate][0]=image`,{
+        fetch(url + `categories/${request.id}/produits`,{
             headers:{
                 "Content-Type":"application/json",
             }
@@ -17,21 +17,22 @@ const produits = {
             }
         })
         .then((data)=>{
-            const produits = data.data;
+            console.log(data);
+            const produits = data;
             main.innerHTML = `
             <div class="sectionProduits backGroundFleur">
                 <div class="titreProduits">
-                    <h3>${produits.attributes.nom_categorie} :</h3>
+                    <h3>${produits[0].categorie.nom_categorie} :</h3>
                 </div>
                 <div id="cardsProduits" class="cardsProduits">
-                ${produits.attributes.articles.data.map( 
+                ${produits.map( 
                     produit =>`
                             <a href="#/pages/produit/${produit.id}" onclick="location.reload()" class="cardProduit">
                                 <div class="conteneurImgProduit">
-                                    <img class="imgProduit" src="${produit.attributes.image.data[0].attributes.formats.small.url}" alt="">
+                                    <img class="imgProduit" src="${produit.url_image_produit}" alt="">
                                 </div>
-                                <label>${produit.attributes.nom_article}</label>
-                                <label>${produit.attributes.prix_article}€</label>
+                                <label>${produit.nom_produit}</label>
+                                <label>${produit.prix_produit}€</label>
                             </a>
                             `
                             ).join('\n')}

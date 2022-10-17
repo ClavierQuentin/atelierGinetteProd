@@ -1,9 +1,8 @@
 const carrouselAbout = (data) => {
-    const listeImages = data[0].attributes.Carrousel.data;
-    let  listeImagesCarrou = [listeImages[8], listeImages[7], listeImages[4], listeImages[6]];
+    const listeImages = data.urls ;
+    // let  listeImagesCarrou = [listeImages[8], listeImages[7], listeImages[4], listeImages[6]];
     //On récupère l'élément HTML
     let carrouselPrez = document.getElementById('carrouselPrez');
-
     //On initialise une variable avec la longueur du array
     //On initialise une largeur du carrousel de 400px
     let largeurCarrouselPrez = 333;
@@ -13,7 +12,7 @@ const carrouselAbout = (data) => {
     //Pour la taille du tableau, on implémente le src et la classe aux images
         for(let i = 0; i < listeImages.length; i++){
             let photoPrez = document.createElement('img');
-            photoPrez.src = listeImages[i].attributes.formats.medium.url;
+            photoPrez.src = listeImages[i];
             photoPrez.classList.add('tailleImg');
             carrouselPrez.appendChild(photoPrez);
         }

@@ -8,4 +8,6 @@ const parseRequestUrl = () => {
     } ;
 }
 
-export { parseRequestUrl };
+const url = "https://api-atelier-dev-dashboard.herokuapp.com/api/";
+
+export { parseRequestUrl, url };

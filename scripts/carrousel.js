@@ -3,14 +3,10 @@ export const fonctionCarrousel = (data) => {
         const listeCategories = data;
         let listeCarrou = [];
         for(let i = 0; i < listeCategories.length; i++){
-            for(let y = 0; y < listeCategories[i].attributes.articles.data.length; y++){
-                if(listeCategories[i].attributes.articles.data[y].attributes.Nouveaute == true){
-                    listeCarrou.push({
-                        url: listeCategories[i].attributes.articles.data[y].attributes.image.data[0].attributes.formats.large.url,
-                        id: listeCategories[i].attributes.articles.data[y].id,
-                    });
-                }
-            }
+            listeCarrou.push({
+                url: listeCategories[i].url_image_produit,
+                id: listeCategories[i].id,
+            });
         }
         //On récupère l'élément carrousel dans html
         let carrousel = document.getElementById('carrousel');

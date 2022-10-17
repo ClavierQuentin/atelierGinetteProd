@@ -1,23 +1,32 @@
 import { fonctionCarrousel } from "../scripts/carrousel.js";
+import { url } from "../utils.js";
 
 const homePage = {
     generate : () => {
         let main = document.getElementById('main-conteneur');
         const conteneurName = document.getElementById('conteneurName');
-    
-        fetch('https://frozen-hollows-86473.herokuapp.com/api/categories?populate[articles][populate][0]=image&populate=image_categories',{
-            headers:{
-                "Content-Type":"application/json",
-            }
+     
+        Promise.all([
+            fetch(url +'produits-accueil',{
+                headers:{
+                    "Content-Type":"application/json",
+                }
+            }),
+            fetch(url +'categories-accueil',{
+                headers:{
+                    "Content-Type":"application/json",
+                }
+            })
+        ])
+        .then(async([res1, res2]) => {
+            const data = await res1.json();
+            const data2 = await res2.json();
+            return [data, data2]
         })
-        .then(function(res){
-            if(res.ok){
-                return res.json();
-            }
-        })
-        .then(function(data){
-            const listeCategories = data.data;
-            fetch('https://frozen-hollows-86473.herokuapp.com/api/texte-accueils', {
+        .then((data) =>{
+            const listImg = data[0];
+            const listeCategories = data[1];
+            fetch(url +'texte-accueil', {
                 headers:{
                     "Content-Type":"application/json",
                 }
@@ -28,7 +37,7 @@ const homePage = {
                 }
             })
             .then((result)=>{
-                const texte = result.data[0].attributes;
+                const texte = result;
                 main.innerHTML = `
                 <header>
                     <div class="conteneurNew">
@@ -53,49 +62,23 @@ const homePage = {
             <div class="backGroundFleur">
                 <div class="decouvrir">
                     <!--TITRE-->
-                    <h2>A Découvrir</h2>
+                    <h2>${texte.titre_categories}</h2>
                 </div>
                 <div class="categories">
-                    <!--CATEGORIE-->
-                    <a href="#/pages/categories/${listeCategories[0].id}" >
-                        <div>
-                            <div class="divImg">
-                                <img class="imgCategorie" src="${listeCategories[0].attributes.image_categories.data[0].attributes.formats.medium.url}" alt="">
-                            </div
-                            <label for="">${listeCategories[0].attributes.nom_categorie}</label>
-                        </div>
-                    </a>
-                    <!---->
-                    <!--CATEGORIE-->
-                    <a href="#/pages/categories/${listeCategories[1].id}" >
-                        <div>
-                            <div class="divImg">
-                                <img class="imgCategorie" src="${listeCategories[1].attributes.image_categories.data[0].attributes.formats.medium.url}" alt="">
+                ${listeCategories.map(
+                    listeCategories=>`
+                        <!--CATEGORIE-->
+                        <a href="#/pages/categories/${listeCategories.id}" >
+                            <div>
+                                <div class="divImg">
+                                    <img class="imgCategorie" src="${listeCategories.url_image_categorie}" alt="">
+                                </div
+                                <label for="">${listeCategories.nom_categorie}</label>
                             </div>
-                            <label for="">${listeCategories[1].attributes.nom_categorie}</label>
-                        </div>
-                    </a>
-                    <!---->
-                    <!--CATEGORIE-->
-                    <a href="#/pages/categories/${listeCategories[2].id}" >
-                        <div>
-                            <div class="divImg">
-                                <img class="imgCategorie" src="${listeCategories[2].attributes.image_categories.data[0].attributes.formats.medium.url}" alt="">
-                            </div>
-                            <label for="">${listeCategories[2].attributes.nom_categorie}</label>
-                        </div>
-                    </a>
-                    <!---->
-                    <!--CATEGORIE-->
-                    <a href="#/pages/categories/${listeCategories[4].id}" >
-                        <div>
-                        <div class="divImg">
-                                <img class="imgCategorie" src="${listeCategories[3].attributes.image_categories.data[0].attributes.formats.medium.url}" alt="">
-                        </div>
-                        <label for="">${listeCategories[4].attributes.nom_categorie}</label>
-                        </div>
-                    </a>
-                    <!---->
+                        </a>
+                        <!---->
+                `
+                ).join('\n')}
                 </div>
             </div>
             <!----------------------------------BANNIERE PICTOS---------------------------------------->
@@ -115,7 +98,7 @@ const homePage = {
             </div>
         
                 `
-            fonctionCarrousel(listeCategories);
+            fonctionCarrousel(listImg);
             conteneurName.style.position = "absolute";
             })
         })

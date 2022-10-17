@@ -1,11 +1,11 @@
-import { parseRequestUrl } from "../utils.js";
+import { parseRequestUrl, url } from "../utils.js";
 
 const request = parseRequestUrl();
 
 const productPage = {
     generate: () =>{
         let main = document.getElementById('main-conteneur');
-        fetch(`https://frozen-hollows-86473.herokuapp.com/api/articles/${request.id}?populate=*`,{
+        fetch(url + `produits/${request.id}`,{
             headers:{
                 "Content-Type":"application/json",
             }
@@ -16,27 +16,27 @@ const productPage = {
             }
         })
         .then((data)=>{
-            const produit = data.data;
+            const produit = data;
             main.innerHTML = `
             <div class="backGroundFleur">
                 <div class="sectionPhoto">
-                    <img src="${produit.attributes.image.data[0].attributes.formats.small.url}" alt="" class="imgProduitUnique">
+                    <img src="${produit.url_image_produit}" alt="" class="imgProduitUnique">
                     <div class="description1">
-                        <h2>${produit.attributes.nom_article}</h2>
+                        <h2>${produit.nom_produit}</h2>
                         <div class="prix">
                             <p>
-                                ${produit.attributes.prix_article}€ l'unité
+                                ${produit.prix_produit}€ l'unité
                             </p>
                         </div>
                         <div class="descriptionCourte">
-                                ${produit.attributes.description_courte} 
+                                ${produit.description_courte_produit} 
                         </div>
                     <!-- <div><button id="boutonAjouter">Ajouter au panier</button></div>-->
                     </div>
                 </div>
                 <hr>
                 <div class="compo">
-                    ${produit.attributes.description_longue}
+                    ${produit.description_longue_produit}
                 </div>
                 <!--<hr>
                 <div>
