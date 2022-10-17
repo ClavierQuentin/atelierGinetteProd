@@ -576,6 +576,9 @@ header{
 .description1 h2{
     margin:  35px;
 }
+.description1 a{
+    color :white;
+}
 .prix{
     text-align: end;
     margin: 35px;
@@ -595,18 +598,12 @@ header{
 }
 .description1 button{
     margin: 35px;
+    padding: 15px;
     background-color: #f8cbc6;
     border: 0;
-    width: 180px;
-    height: 50px;
     cursor: pointer;
     font-size: 20px;
     color: white;
-}
-.description1 button:hover{
-    color: #f8cbc6;
-    background-color: white;
-    border: 1px solid #f8cbc6;
 }
 hr{
     width:30%;

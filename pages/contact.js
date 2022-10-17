@@ -45,7 +45,7 @@ const contactPage = {
                                         <input type="hidden"   name="recaptcha" id="recaptcha" value="${token}">
                                     <div class="divRGPD">
                                             <input required type="checkbox" name="rgpd" id="rgpd" >
-                                            <label for="rgpd">J'autorise ce site à conserver mes données personnelles transmises via ce formulaire. Aucune exploitation commerciale ne sera faite des données conservée.s</label>
+                                            <label for="rgpd">J'autorise ce site à conserver mes données personnelles transmises via ce formulaire. Aucune exploitation commerciale ne sera faite des données conservées</label>
                                     </div>
                                         <button id="contactBtn" type="submit" >Envoyer</button>
                                 </div>

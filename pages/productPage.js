@@ -31,7 +31,7 @@ const productPage = {
                         <div class="descriptionCourte">
                                 ${produit.description_courte_produit} 
                         </div>
-                    <!-- <div><button id="boutonAjouter">Ajouter au panier</button></div>-->
+                     <div><button id="boutonAjouter"><a href="${produit.url_externe}">Voir sur le site marchand</a></button></div>
                     </div>
                 </div>
                 <hr>
