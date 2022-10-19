@@ -10,7 +10,7 @@ const parseRequestUrl = () => {
 }
 
 //URI pour requêtes
-// const url = "https://api-atelier.herokuapp.com/api/";
-const url ="http://127.0.0.1:8000/api/";
+const url = "https://api-atelier.herokuapp.com/api/";
+// const url ="http://127.0.0.1:8000/api/";
 
 export { parseRequestUrl, url };
