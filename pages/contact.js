@@ -1,8 +1,16 @@
+/**Page de contact du site internet
+ * Validation du recaptcha Google via une requête POST vers le back-end de l'application
+ * Création du formulaire selon la réponse de la réquête
+ */
+
+//Importation du script pour l'envoie des données du formulaire et de l'URI
 import { contact } from "../scripts/contactScript.js";
 import { url } from "../utils.js";
 
 const contactPage = {
     generate: () =>{
+
+        //A l'ouverture de la page, réception du token de google
         grecaptcha.ready(function() {
             grecaptcha.execute('6LepuxohAAAAAChJ_a-bx9KO4nqIfEw8iCt5Jk3y', {action: 'message'}).then(function(token) {
                 let main = document.getElementById('main-conteneur');
@@ -47,7 +55,7 @@ const contactPage = {
                                             <input required type="checkbox" name="rgpd" id="rgpd" >
                                             <label for="rgpd">J'autorise ce site à conserver mes données personnelles transmises via ce formulaire. Aucune exploitation commerciale ne sera faite des données conservées</label>
                                     </div>
-                                        <button id="contactBtn" type="submit" >Envoyer</button>
+                                        <button class="background" id="contactBtn" type="submit" >Envoyer</button>
                                 </div>
                                 <span id="message"></span>
                             </form>

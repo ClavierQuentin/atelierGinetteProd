@@ -1,18 +1,6 @@
-/*--------------Barre de navigation----------*/
-nav{
-    justify-content: center;
-}
-    /*-----------------Partie titre--------------*/
-    .conteneurName{
-        position: absolute;
-    }
-    .name{
-        margin-top: 5px;
-    }
 /*----------------Carrousel------------------*/
 header{
     position: relative;
-    color: white;
 }
 .conteneurNew{
     display: flex;
@@ -28,13 +16,11 @@ header{
     position: absolute;
     z-index: 102;
     margin-top: 29%;
-    background-color: #f8cbc6;
     border: 0;
     width: 180px;
     height: 50px;
     cursor: pointer;
     font-size: 20px;
-    color: white;
 }
 .conteneurNew button:hover{
     transform: scale(1.06);
@@ -50,17 +36,16 @@ header{
 }
 .conteneur{
     overflow: hidden;
-    /*min-width: 100%;
-    height: 95vh;*/
 }
+/*-------------------------*/
+
     /*-------------Banniere présentation-----------*/
-    .prez h4{
-        padding-left: 2%;
+    .prez h2{
+        margin-left: 5%;
         padding-top: 2%;
-        color: white;
     }
     .banniereCitation{
-        height: 30vh;
+        height: 28vh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -68,15 +53,20 @@ header{
     .banniereCitation p{
         width: 90%;
         font-style: italic;
-        color: white;
+        font-size: 20px;
     }
-/*----------Banniere catégories---------*/
-.decouvrir h4{
-    margin-left: 10%;
+
+    /*-------------------------*/
+
+
+    /*----------Banniere catégories---------*/
+.decouvrir h2{
+    margin-left: 5%;
     padding-top: 5%;
+    padding-bottom: 2%;
 }
 .categories{
-    height: 60vh;
+    height: 55vh;
     display: flex;
     flex-direction: row;
     gap: 2%;
@@ -92,12 +82,24 @@ header{
     font-size: 20px;
     color: black;
     gap: 15px;
+    overflow: hidden;
+
+}
+.divImg{
+    width: 350px;
+    height: 250px;
 }
 .imgCategorie{
     width: 350px;
     height: 250px;
     object-fit: cover;
 }
+.imgCategorie:hover{
+    transform: scale(1.1);
+    transition: 2s;
+}
+/*-------------------------*/
+
     /*-----------------Bannière picto----------------*/
     .bannierePicto{
         display: flex;
@@ -120,6 +122,8 @@ header{
         color: white;
         font-size: 20px;
     }
+/*-------------------------*/
+
 /*----------------------Responsive------------------*/
 @media screen  and (max-width:400px) {
     .conteneurNew h2{

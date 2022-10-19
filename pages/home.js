@@ -39,10 +39,10 @@ const homePage = {
             .then((result)=>{
                 const texte = result;
                 main.innerHTML = `
-                <header>
+                <header class="whiteFont">
                     <div class="conteneurNew">
                         <h2>Ouverture du site !</h2>
-                        <button id="boutonNouveaute" onclick='window.location = "#/pages/categories"'>Découvrir</button>
+                        <button class="background" id="boutonNouveaute" onclick='window.location = "#/pages/categories"'>Découvrir</button>
                     </div>
                     <div id="conteneur" class="conteneur">
                         <div id="carrousel" class="carrousel">
@@ -52,11 +52,11 @@ const homePage = {
             <!---------------------------------BANNIERE PRESENTATION------------------------>
                 <div class="prez">
                             <!--TITRE-->
-                    <h2>${texte.titre_accueil}</h2>
+                    <h2 class="whiteFont">${texte.titre_accueil}</h2>
                 </div>
                 <!--TEXTE-->
                 <div class="banniereCitation">
-                    <p>${texte.texte_accueil}</p>
+                    <p class="whiteFont">${texte.texte_accueil}</p>
                 </div>
                 <!-------------------------------------BANNIERE CATEGORIES---------------------------------------->
             <div class="backGroundFleur">
@@ -73,7 +73,7 @@ const homePage = {
                                 <div class="divImg">
                                     <img class="imgCategorie" src="${listeCategories.url_image_categorie}" alt="">
                                 </div
-                                <label for="">${listeCategories.nom_categorie}</label>
+                                <label>${listeCategories.nom_categorie}</label>
                             </div>
                         </a>
                         <!---->
@@ -85,15 +85,15 @@ const homePage = {
             <div class="bannierePicto">
                 <div>
                     <img src="./img/hand-made.png" alt="">
-                    <label for="">Fait maison</label>
+                    <label class="whiteFont">Fait maison</label>
                 </div>
                 <div>
                     <img src="./img/icons8-machine-à-coudre-80.png" alt="">
-                    <label for="">Produits artisanaux</label>
+                    <label class="whiteFont">Produits artisanaux</label>
                 </div>
                 <div>
                     <img src="./img/ecologique.png" alt="">
-                    <label for="">Eco-responsable</label>
+                    <label class="whiteFont">Eco-responsable</label>
                 </div>
             </div>
         

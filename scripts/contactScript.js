@@ -12,7 +12,6 @@ const contact = () => {
                 'sujet': document.getElementById('sujet').value,
                 'email': document.getElementById('email').value,
                 'message': document.getElementById('body').value,
-                // 'recaptcha': document.getElementById('recaptcha').value
             
         }
         const headers = new Headers();
@@ -32,6 +31,7 @@ const contact = () => {
         })
         .catch((err) => {
             console.log(err);
+            message.innerHTML = "Une erreur est survenue";
         })
 
     });

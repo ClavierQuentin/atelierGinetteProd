@@ -1,29 +1,43 @@
+/**Page About du site internet
+ * 3 requêtes nécessaires pour avoir toutes les informations pour la page
+ * Utilisation du constructeur des Promises et de l'asyncronicité de JS pour effectuer les requêtes fetch en parallèles
+ */
+
+//Importation du script pour le mini carrousel
 import { carrouselAbout } from "../scripts/carrouselAbout.js";
+//Importation des différentes variables nécessaires
 import { Init, myRequest, myRequest2, myRequest3 } from "../requests.js";
 
 const aboutPage = {
     generate : () => {
+        //On récupère les différents éléments HTML
         let main = document.getElementById('main-conteneur');
         const conteneurName = document.getElementById('conteneurName');
 
+        //Requêtes parallèles
         Promise.all([
             fetch(myRequest,Init),
             fetch(myRequest2,Init),
             fetch(myRequest3,Init),
-            // fetch(myRequest4,Init)
         ])
-        .then(async([res1, res2, res3, res4]) => {
+        .then(async([res1, res2, res3]) => {
             const data1 = await res1.json();
             const data2 = await res2.json();
             const data3 = await res3.json();
-            // const data4 = await res4.json();
             return [data1, data2, data3];
         })
+        //On récupère les réponses sous format Json
         .then((data) => {
+            //On force la sécurité de la page en redirigeant le navigateur si une des requêtes est vide
+            if(data[0].status == false || data[1].status == false || data[2].status == false){
+                location.assign('#/pages/404');
+            }
+            //On décompose le tableau de réponse pour utilisation 
             const ban1 = data[0];
             const ban2 = data[1];
             const ban3 = data[2];
-            // const ban4 = data[3].data;
+
+            //On transforme le contenu HTML du conteneur
             main.innerHTML = `
             <!-----------------BANNIERE QUI JE SUIS--------------------->
             <div class="banniere quiJeSuis backGroundFleur">
@@ -35,11 +49,11 @@ const aboutPage = {
                 </div>
                 <!--IMAGE-->
                 <div class="portrait">
-                    <img src="${ban1.url_image}" alt="">
+                    <img src="${ban1.url_image}" alt="${ban1.titre}">
                 </div>
             </div>
             <!---------------------------------BANNIERE LIEU-------------------------------->
-            <div class="lieu banniere">
+            <div class="lieu whiteFont banniere">
                 <!--CARROUSEL-->
                 <div class="conteneurCarrousel" id="conteneurCarrousel">
                     <div id="carrouselPrez" class="carrousel">
@@ -65,14 +79,14 @@ const aboutPage = {
                         </div>
                         <!--IMAGE-->
                         <div>
-                            <img class="paysage" src="${ban3.url_image}" alt="">
+                            <img class="paysage" src="${ban3.url_image}" alt="${ban3.titre_1}">
                         </div>
                     </div>
                 </div>
                 <div class="banniere wrapReverse" style="padding-bottom: 80px;">
                     <!--IMAGE-->
                     <div>
-                        <img style=" height:500px;" src="${ban3.url_image_2}" alt="">
+                        <img style=" height:500px;" src="${ban3.url_image_2}" alt="${ban3.titre_2}">
                     </div>
                     <div class="divTexte">
                         <!--TITRE-->
@@ -84,11 +98,15 @@ const aboutPage = {
             </div>
     
             `
+            //On appelle la fonction du carrousel en passant les urls des images en paramètre
             carrouselAbout(ban2);
+            //Changement de la position du titre
             conteneurName.style.position = "relative"
         })
         .catch((error) => {
+            //Si une erreur se produit, on passe sur la page 404
             console.log(error)
+            location.assign('#/pages/404')
         })
     }
 }

@@ -6,49 +6,55 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="Content-Language" content="fr">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css" type="text/css">    <!--PAGE CSS GLOBALE-->
-    <!--<link rel="stylesheet" href="./css/accueil.css">   PAGE CSS POUR INDEX-->
+
+    <!-- Pages CSS -->
+    <link rel="stylesheet" href="css/main.css" type="text/css">    <!--PAGE CSS GLOBALE-->
+    <link rel="stylesheet" href="css/produits.css" type="text/css">
+    <link rel="stylesheet" href="css/about.css" type="text/css">
+    <link rel="stylesheet" href="css/accueil.css" type="text/css">
+    <link rel="stylesheet" href="css/contact.css" type="text/css">
+
+    <!-- Scripts externes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+    <!-- Script JS principale -->
     <script type="module" src="main.js"></script>
 
     <title>Atelier Ginette</title>
 </head>
-    <!-- includes the Braintree JS client SDK 
-    <script src="https://js.braintreegateway.com/web/dropin/1.33.1/js/dropin.min.js"></script>-->
-
-    <!-- includes jQuery 
-    <script src="http://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>-->
 
 <body>
+    <!-- Bloc panier -->
     <!--<div id="panier" class="panier">
         <h3>Panier</h3>
         <hr>
         <div id="emptyBasket" class="divPanier"></div>
-        <button onclick="document.location.hash = '/pages/panier'">Accéder au panier</button>
+        <button class='background' onclick="document.location.hash = '/pages/panier'">Accéder au panier</button>
     </div>-->
     <!-------------------------------------------------TITRE ET MENU----------------------------------------->
     <!--BLOC TITRE-->
     <div id="conteneurName" class="conteneurName">
-        <a href="#"><h1 class="name" id="name">Atelier Ginette</h1></a>
+        <a href="#"><h1 id="name" class="name whiteFont">Atelier Ginette</h1></a>
     </div>
     <!--BLOC MENU-->
     <div class="divMenu" id="divMenu">
         <div class="menu" id="menu">
         </div>
     </div> 
-    <!--<div id="blocPanier" class="blocPanier">
+    <!-- Icone panier -->
+    <!--<div id="blocPanier" class="blocPanier whiteFont">
         <img width="40px" src="./img/icons8-shopping-trolley-64.png" alt="">
     </div>-->
     <!----------------------------------------------PAGE DE NAVIGATION------------------------------------------------------------------>
     <nav>
             <p>
-                <a href="#" class="links">ACCUEIL</a> 
-                <a href="#/pages/about" class="links">A PROPOS</a> 
-                <a href="#/pages/categories" class="links">NOS PRODUITS</a> 
-                <a href="https://www.etsy.com/fr/shop/AtelierGinette?ref=shop_sugg" target="_blank">POINTS DE VENTE</a>
-                <a href="#/contact" class="links">CONTACT</a>
+                <a href="#" class="whiteFont links">ACCUEIL</a> 
+                <a href="#/pages/about" class="whiteFont links">A PROPOS</a> 
+                <a href="#/pages/categories" class="whiteFont links">NOS PRODUITS</a> 
+                <a href="https://www.etsy.com/fr/shop/AtelierGinette?ref=shop_sugg" target="_blank" class="whiteFont">POINTS DE VENTE</a>
+                <a href="#/contact" class="whiteFont links">CONTACT</a>
             </p> 
     </nav>
     <!--------------------------------------CONTENEUR PRINCIPAL---------------------------------->
@@ -57,11 +63,11 @@
     <!----------------------------------------------------FOOTER--------------------------------------------------->
     <footer>
         <!------------------------------PARTIE RESEAU SOCIAUX----------------------------------------------->
-        <div class="banniereReseaux">
+        <div class="banniereReseaux whiteFont">
             <h4>Suivez-nous</h4>
-            <a class="liens" href="https://www.facebook.com/atelierginette" target="_blank">Facebook</a>
-            <a class="liens" href="https://www.instagram.com/atelier_ginette/" target="_blank">Instagram</a>
-            <a class="liens" href="#/contact">Ecrivez-nous</a>      
+            <a class="liens whiteFont" href="https://www.facebook.com/atelierginette" target="_blank">Facebook</a>
+            <a class="liens whiteFont" href="https://www.instagram.com/atelier_ginette/" target="_blank">Instagram</a>
+            <a class="liens whiteFont" href="#/contact">Ecrivez-nous</a>      
         </div>
         <!-------------------------PARTIE CGV---------------------------------------->
         <div class="banniereCGV">
@@ -72,6 +78,7 @@
     </footer>
     <!--PROGRAMME POUR LE MENU ET BOUTON PANIER-->
    <script src="scripts/scriptMenu.js" defer></script>
+   <!-- Script google pour recaptcha -->
    <script src="https://www.google.com/recaptcha/api.js?render=6LepuxohAAAAAChJ_a-bx9KO4nqIfEw8iCt5Jk3y"></script>
 
 

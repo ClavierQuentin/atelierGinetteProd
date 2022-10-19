@@ -1,3 +1,4 @@
+//Fonction pour décomposer l'URL et en contrôler la sortie
 const parseRequestUrl = () => {
     const url = document.location.hash.toLowerCase();
     const request = url.split("/");
@@ -8,6 +9,6 @@ const parseRequestUrl = () => {
     } ;
 }
 
-const url = "https://api-atelier-dev-dashboard.herokuapp.com/api/";
+const url = "https://api-atelier.herokuapp.com/api/";
 
 export { parseRequestUrl, url };

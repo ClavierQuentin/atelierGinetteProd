@@ -1,0 +1,150 @@
+/*------------Listing catégories et produits----------*/
+.sectionProduits{
+    padding: 5% 0;
+}
+.titreProduits{
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+.cardsProduits{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+.cardsProduits label{
+    text-align: center;
+    margin-top: 3%;
+}
+.card{
+    display: block;
+    width: 277px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2%;
+    cursor: pointer;
+}
+.conteneurImgCard{ 
+    width: 304px;
+    height: 455px;
+    overflow: hidden;
+}
+.imgCardProduit{
+    width: 304px;
+    height: 455px;
+    object-fit: cover;
+    transition: 1s;
+}
+.imgCardProduit:hover{
+    transform: scale(1.05);
+}
+
+.cardProduit{
+    display: block;
+    width: 304px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+.conteneurImgProduit{
+    width: 304px;
+    height: 455px;
+    overflow: hidden;
+}
+.imgProduit{
+    width: 304px;
+    height: 455px;
+    object-fit: cover;
+    transition: 1s;
+}
+.imgProduit:hover{
+    transform: scale(1.05);
+}
+
+
+/*----------Page Produit--------------*/
+.imgProduitUnique{
+    width: 305px;
+    height: 400px;
+    object-fit: cover;
+    margin: 10px 0;
+}
+.sectionPhoto{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.description1{
+    width: 40%;
+    text-align: center;
+    margin: 35PX;
+}
+
+.description1 h2{
+    margin:  35px;
+}
+.prix{
+    text-align: end;
+    margin: 35px;
+    font-size: 20px;
+}
+.descriptionCourte{
+    margin: 35px;
+    text-align: justify;
+}
+@media screen and (max-width:500px) {
+    .description1{
+        width: 100%;
+    }
+    .descriptionCourte{
+        margin: 0;
+    }
+}
+#boutonAjouter{
+    margin: 35px;
+    padding: 15px;
+    border: 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+hr{
+    width:30%;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%; 
+    color: #f8cbc6;
+}
+.compo{
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    padding-bottom: 2%;
+}
+.titreProduitEquivalent{
+    margin-left: 3%;
+}
+.imgProduitEquivalent{
+    width: 304px;
+    height: 455px;
+}
+.produit{
+    display: flex;
+    gap: 20px;
+    margin: 2%;
+}
+.produit div{
+    text-align: center;
+}
+
+.produitEquivalent{
+    display: flex;
+flex-direction: column;
+align-items: center;
+gap: 35px;
+}
