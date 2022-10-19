@@ -6,7 +6,8 @@
 //Importation du script pour le mini carrousel
 import { carrouselAbout } from "../scripts/carrouselAbout.js";
 //Importation des différentes variables nécessaires
-import { Init, myRequest, myRequest2, myRequest3 } from "../requests.js";
+import { Init, requestAbout1, requestAbout2, requestAbout3 } from "../requests.js";
+import { page404 } from "./404.js";
 
 const aboutPage = {
     generate : () => {
@@ -16,9 +17,9 @@ const aboutPage = {
 
         //Requêtes parallèles
         Promise.all([
-            fetch(myRequest,Init),
-            fetch(myRequest2,Init),
-            fetch(myRequest3,Init),
+            fetch(requestAbout1,Init),
+            fetch(requestAbout2,Init),
+            fetch(requestAbout3,Init),
         ])
         .then(async([res1, res2, res3]) => {
             const data1 = await res1.json();
@@ -28,10 +29,7 @@ const aboutPage = {
         })
         //On récupère les réponses sous format Json
         .then((data) => {
-            //On force la sécurité de la page en redirigeant le navigateur si une des requêtes est vide
-            if(data[0].status == false || data[1].status == false || data[2].status == false){
-                location.assign('#/pages/404');
-            }
+            
             //On décompose le tableau de réponse pour utilisation 
             const ban1 = data[0];
             const ban2 = data[1];
@@ -106,7 +104,8 @@ const aboutPage = {
         .catch((error) => {
             //Si une erreur se produit, on passe sur la page 404
             console.log(error)
-            location.assign('#/pages/404')
+            main.innerHTML = page404;
+            conteneurName.style.position = "relative"
         })
     }
 }

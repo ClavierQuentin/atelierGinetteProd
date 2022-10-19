@@ -5,7 +5,6 @@ import contactPage from "./pages/contact.js";
 import homePage from "./pages/home.js";
 import productPage from "./pages/productPage.js";
 import produits from "./pages/produits.js";
-import page404 from "./pages/404.js";
 
 /**Fonction pour décomposer l'url */
 import { parseRequestUrl } from "./utils.js";
@@ -15,12 +14,12 @@ const routes = {
     "/" : homePage,
     "/pages": homePage,
     "/pages/about": aboutPage,
-    "/pages/categories": categories,
     "/pages/categories/id": produits,
+    "/pages/categories": categories,
+    
     "/pages/produit/id": productPage,
     "/contact": contactPage,
     "/pages/admin":true,
-    "/pages/404": page404
 }
 
 /**Déclaration de la fonction router() 

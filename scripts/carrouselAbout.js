@@ -1,10 +1,14 @@
+/**Fonction pour le mini carrousel sur la page About */
+
 const carrouselAbout = (data) => {
+
+    //On récupère le tableau d'urls stocké dans data
     const listeImages = data.urls ;
-    // let  listeImagesCarrou = [listeImages[8], listeImages[7], listeImages[4], listeImages[6]];
+
     //On récupère l'élément HTML
     let carrouselPrez = document.getElementById('carrouselPrez');
-    //On initialise une variable avec la longueur du array
-    //On initialise une largeur du carrousel de 400px
+    
+    //On initialise une largeur du carrousel de 333px
     let largeurCarrouselPrez = 333;
 
     //Fonction de génération des images

@@ -1,55 +1,68 @@
-import { parseRequestUrl,url } from "../utils.js";
+/**Page de listing des produits selon une catégorie */
 
+//Importation de fonctions et variables
+import { parseRequestUrl,url } from "../utils.js";
+import { page404 } from "./404.js";
+
+//On décompose l'url pour récupérer l'id
 const request = parseRequestUrl();
 
 const produits = {
     generate: () => {
+        
+        //On récupère les éléments HTML
         let main = document.getElementById('main-conteneur');
         const conteneurName = document.getElementById('conteneurName');
+
+        //Requête
         fetch(url + `categories/${request.id}/produits`,{
             headers:{
                 "Content-Type":"application/json",
             }
         })
-        .then((res) => {
+        .then( (res) => {
             if(res.ok){
                 return res.json();
+            } else{
+                main.innerHTML = page404;
             }
         })
         .then((data)=>{
-            console.log(data);
+            
+            //On stocke la réponse et on l'affiche
             const produits = data;
-            if(produits.length > 0){
-                main.innerHTML = `
+            main.innerHTML = `
                 <div class="sectionProduits backGroundFleur">
+
+                    <!--TITRE DE LA CATEGORIE-->
                     <div class="titreProduits">
                         <h3>${produits[0].categorie.nom_categorie} :</h3>
                     </div>
+
+                    <!--PRODUITS-->
                     <div id="cardsProduits" class="cardsProduits">
-                    ${produits.map( 
-                        produit =>`
-                                <a href="#/pages/produit/${produit.id}" onclick="location.reload()" class="cardProduit">
-                                    <div class="conteneurImgProduit">
-                                        <img class="imgProduit" src="${produit.url_image_produit}" alt="">
-                                    </div>
-                                    <label>${produit.nom_produit}</label>
-                                    <label>${produit.prix_produit}€</label>
-                                </a>
-                                `
-                                ).join('\n')}
+                        ${produits.map( 
+                            produit =>`
+                                    <a href="#/pages/produit/${produit.id}" onclick="" class="cardProduit">
+                                        <div class="conteneurImgProduit">
+                                            <img class="imgProduit" src="${produit.url_image_produit}" alt="">
+                                        </div>
+                                        <label>${produit.nom_produit}</label>
+                                        <label>${produit.prix_produit}€</label>
+                                    </a>
+                                    `
+                            ).join('\n')}
                     </div>
                 </div>
-                `
-                conteneurName.style.position = "relative";
+            `
+            conteneurName.style.position = "relative";
 
-            }else{
-                location.assign('#/pages/404')
-            }
-        
+            
+                
         })
         .catch((err) => {
+            //En cas d'erreur on affiche un message
             console.log(err);
-            location.assign('#/pages/404')
         })
     }
 }
