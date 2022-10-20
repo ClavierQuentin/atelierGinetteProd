@@ -20,7 +20,7 @@ const contactPage = {
                 //On fait apparaitre le formulaire
                 main.innerHTML = `
                     <div class="conteneurContact backGroundFleur" >
-                        <--FORMULAIRE-->
+                        <!--FORMULAIRE-->
                         <form id="contactForm">
                             <h2>Contactez-moi !</h2>
                             <div class="containerForm">
@@ -35,7 +35,7 @@ const contactPage = {
                 
                                 <input type="email" name="email" placeholder="Votre email" id="email" required>
                                 
-                                <textarea placeholder = "Indiquez-moi votre message" id="body" name = "body" required></textarea>
+                                <textarea placeholder = "Indiquez-moi votre message" id="body" name = "body" required rows="5"></textarea>
 
                                 <input type="hidden"   name="recaptcha" id="recaptcha" value="${token}">
 

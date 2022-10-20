@@ -42,7 +42,7 @@ const homePage = {
 
                     <div class="conteneurNew">
                         <h2>Ouverture du site !</h2>
-                        <button class="background" id="boutonNouveaute" onclick='window.location = "#/pages/categories"'>Découvrir</button>
+                        <button class="background" id="boutonNouveaute" onclick='window.location = "#/pages/produits"'>Découvrir</button>
                     </div>
 
                     <div id="conteneur" class="conteneur">

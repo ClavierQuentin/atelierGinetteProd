@@ -5,6 +5,7 @@ import contactPage from "./pages/contact.js";
 import homePage from "./pages/home.js";
 import productPage from "./pages/productPage.js";
 import produits from "./pages/produits.js";
+import produitsImportant from "./pages/produitsImportant.js";
 
 /**Fonction pour décomposer l'url */
 import { parseRequestUrl } from "./utils.js";
@@ -16,7 +17,7 @@ const routes = {
     "/pages/about": aboutPage,
     "/pages/categories/id": produits,
     "/pages/categories": categories,
-    
+    "/pages/produits": produitsImportant,
     "/pages/produit/id": productPage,
     "/contact": contactPage,
     "/pages/admin":true,
