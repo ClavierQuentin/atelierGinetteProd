@@ -90,7 +90,7 @@ const productPage = {
                             ${produits.map(
                                 produit=>`
                                     <div class="produitEquivalent">
-                                        <div>
+                                        <div class="labels">
                                             <label>${produit.nom_produit}</label>
                                             <label>${produit.prix_produit}€</label>
                                         </div>
