@@ -95,15 +95,13 @@ document.getElementById('newsletterForm').addEventListener('submit', (e) => {
             }
             fetch('https://api-atelier.herokuapp.com/api/add-email', Init)
             .then((res) => {
-                if(res.status === 201){
-                    msg.innerHTML = "Inscription validée";
-                } else{
-                    msg.innerHTML = "Une erreur est survenue";
-                }
+                return res.json();   
+            })
+            .then((res)=>{
+                msg.innerHTML = res.message;
             })
             .catch((err) => {
-                console.log(err);
-                msg.innerHTML = "Une erreur est survenue";
+                msg.innerHTML = err;;
             })
 
         })
