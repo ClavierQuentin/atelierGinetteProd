@@ -22,6 +22,10 @@
     <!-- Script JS principal -->
     <script type="module" src="main.js"></script>
 
+    <!-- Script google pour recaptcha -->
+   <script src="https://www.google.com/recaptcha/api.js?render=6LepuxohAAAAAChJ_a-bx9KO4nqIfEw8iCt5Jk3y"></script>
+
+
     <title>Atelier Ginette</title>
 </head>
 
@@ -65,6 +69,14 @@
     <footer>
         <!------------------------------PARTIE RESEAU SOCIAUX----------------------------------------------->
         <div class="banniereReseaux whiteFont">
+            <div class="emailContainer">
+                <form id="newsletterForm">
+                    <input name="pot" class="visually-hidden" tabindex="-1" autocomplete="off" id="pot">
+                    <input type="email" name="email" id="email" placeholder="Votre adresse email">
+                    <button id="newsletterBtn">S'inscrire à la newsletter</button>
+                </form>
+                <span id="msg"></span>
+            </div>
             <h4>Suivez-nous</h4>
             <a class="liens whiteFont" href="https://www.facebook.com/atelierginette" target="_blank">Facebook</a>
             <a class="liens whiteFont" href="https://www.instagram.com/atelier_ginette/" target="_blank">Instagram</a>
@@ -80,8 +92,6 @@
     </footer>
     <!--PROGRAMME POUR LE MENU ET BOUTON PANIER-->
    <script src="scripts/script.js" defer></script>
-   <!-- Script google pour recaptcha -->
-   <script src="https://www.google.com/recaptcha/api.js?render=6LepuxohAAAAAChJ_a-bx9KO4nqIfEw8iCt5Jk3y"></script>
 
 
 </body>

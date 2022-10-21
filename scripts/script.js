@@ -1,25 +1,5 @@
 /**Différentes fonctions */
 
-//On décompose l'url
-// const parseRequestUrl = () => {
-//     const url = document.location.hash.toLowerCase();
-//     const request = url.split("/");
-//     return{
-//         page: request[1],
-//         destination: request[2],
-//         id: request[3]
-//     } ;
-// }
-// let requestUrl = parseRequestUrl();
-// let pageAccueil = false
-
-//On retourne vrai si nous sommes sur la page d'accueil
-// if(!requestUrl.page){
-//     pageAccueil = true
-// }
-// else{
-//     pageAccueil = false
-// }
 
 //On récupère la div cliquable
 let divMenu = document.getElementById('divMenu');
@@ -42,14 +22,6 @@ let conteneurName = document.getElementById('conteneurName');
 //On déclare un booléen faux pour valider une condition
 let isOuvert = false;
 const gestionMenu = () => {
-    // let requestUrl = parseRequestUrl();
-    // let pageAccueil = false
-    // if(requestUrl.page == undefined){
-    //     pageAccueil = true
-    // }
-    // else{
-    //     pageAccueil = false
-    // }
 
     //Si le booléen est faux
     if(!isOuvert){
@@ -90,6 +62,56 @@ divMenu.addEventListener('click', gestionMenu);
 //A chaque clicque sur les liens du menu on appelle gestionMenu()
 Array.from(links).forEach(link =>{
     link.addEventListener('click', gestionMenu)
+})
+
+/**Script au submit pour la newsletter */
+document.getElementById('newsletterForm').addEventListener('submit', (e) => {
+    //On récupère l'élément pour le message de retour
+    let msg = document.getElementById('msg')
+
+    //On empêche le refresh de la page
+    e.preventDefault(); 
+
+
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6LepuxohAAAAAChJ_a-bx9KO4nqIfEw8iCt5Jk3y', {action: 'message'}).then(function(token) {
+
+            //On stocke les valeurs de chaque input
+            let data = {
+                'email': document.getElementById('email').value,
+                'pot':document.getElementById('pot').value,
+                'token': token     
+            }
+
+            //Création de la requête Fetch
+            const headers = new Headers();
+            headers.append('Content-Type', 'application/json');
+            const Init = {
+                method: "POST",
+                headers: headers,
+                mode: "cors",
+                cache: "default",
+                body: JSON.stringify(data)
+            }
+            fetch('https://api-atelier.herokuapp.com/api/add-email', Init)
+            .then((res) => {
+                if(res.status === 201){
+                    msg.innerHTML = "Inscription validée";
+                } else{
+                    msg.innerHTML = "Une erreur est survenue";
+                }
+            })
+            .catch((err) => {
+                console.log(err);
+                msg.innerHTML = "Une erreur est survenue";
+            })
+
+        })
+
+    })
+
+
+
 })
 
 /**Création d'un bouton et d'un encadré panier pour plus tard 
