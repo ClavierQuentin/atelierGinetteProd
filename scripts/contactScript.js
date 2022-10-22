@@ -26,22 +26,21 @@ const contact = () => {
         }
 
         //Création de la requête Fetch
+
+        //Instance de l'entête
         const headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        const Init = {
-            method: "POST",
-            headers: headers,
-            mode: "cors",
-            cache: "default",
-            body: JSON.stringify(data)
-        }
-        fetch(url + 'message', Init)
+        headers.append('method', 'GET');
+        headers.append('mode', 'cors');
+        headers.append('cache', 'default');
+
+        fetch(url + 'message', headers)
+        .then((res)=>{
+            return res.json;
+        })
         .then((res) => {
-            if(res.status === 200){
-                message.innerHTML = "Votre message a bien été envoyé";
-            } else{
-                message.innerHTML = "Une erreur est survenue";
-            }
+            //On retourne le message fourni par le serveur
+            message.innerHTML = res.message;
         })
         .catch((err) => {
             console.log(err);

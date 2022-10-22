@@ -51,7 +51,7 @@ const contactPage = {
                         </form>
                     </div>
                 `
-                //Appelle de la fonction pour l'evenement au submit
+                //Appel de la fonction pour l'evenement au submit
                 contact();
                 conteneurName.style.position = "relative";
             })

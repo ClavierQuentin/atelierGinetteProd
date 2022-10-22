@@ -1,6 +1,7 @@
 /**Page de listing des produits selon une catégorie */
 
 //Importation de fonctions et variables
+import { headers } from "../requests.js";
 import { parseRequestUrl,url } from "../utils.js";
 import { page404 } from "./404.js";
 
@@ -15,15 +16,14 @@ const produits = {
         const conteneurName = document.getElementById('conteneurName');
 
         //Requête
-        fetch(url + `categories/${request.id}/produits`,{
-            headers:{
-                "Content-Type":"application/json",
-            }
-        })
+        fetch(url + `categories/${request.id}/produits`, headers)
         .then( (res) => {
+            //Si la requête passe, on retourne les données sous format JSON
             if(res.ok){
                 return res.json();
-            } else{
+            } 
+            //Sinon, on retourne la page 404
+            else{
                 main.innerHTML = page404;
             }
         })

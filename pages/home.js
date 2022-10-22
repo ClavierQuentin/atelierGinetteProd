@@ -13,13 +13,13 @@ const homePage = {
         let main = document.getElementById('main-conteneur');
         const conteneurName = document.getElementById('conteneurName');
      
-        //Requete en fetch
+        //Requete fetch en parallèle
         Promise.all([
             fetch(requestAccueilProduits),
             fetch(requestAccueilCategories),
             fetch(requestAccueilTexts)
         ])
-        //On récupère les données en JSON
+        //Utilisation d'async/await pour valider la suite de la promise lorsque toutes les données sont réceptionnées
         .then(async([res1, res2, res3]) => {
             const data = await res1.json();
             const data2 = await res2.json();

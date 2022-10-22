@@ -1,8 +1,9 @@
 /**Page d'affichage d'un produit
- * Nécessite une requete
+ * Nécessite deux requetes
  */
 
 //Importations
+import { headers } from "../requests.js";
 import { parseRequestUrl, url } from "../utils.js";
 import { page404 } from "./404.js";
 
@@ -16,21 +17,14 @@ const productPage = {
         let main = document.getElementById('main-conteneur');
         const conteneurName = document.getElementById('conteneurName');
 
-        //Requêtes
+        //Requêtes parallèles
         Promise.all([
             //Requête pour obtenir les détails du produit
-            fetch(url + `produits/${request.id}`,{
-                headers:{
-                    "Content-Type":"application/json",
-                }
-            }),
+            fetch(url + `produits/${request.id}`, headers),
             //Requête pour obtenir les autres produits de la catégorie
-            fetch(url + `produits/${request.id}/all`,{
-                headers:{
-                    "Content-Type":"application/json",
-                }
-            })
+            fetch(url + `produits/${request.id}/all`, headers)
         ])
+        //Utilisation d'async/await pour valider la suite de la promise lorsque toutes les données sont réceptionnées
         .then(async([res, res2]) => {
             const data = await res.json();
             const data2 = await res2.json();
@@ -85,6 +79,7 @@ const productPage = {
                     <hr>
 
                     <div>
+                    <!--BLOC PRODUIT EQUIVALENT-->
                         <h3 class="titreProduitEquivalent">Vous pourriez aussi aimer :</h3>
                         <div class="produits">
                             ${produits.map(

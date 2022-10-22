@@ -5,8 +5,9 @@
 
 //Importation du script pour le mini carrousel
 import { carrouselAbout } from "../scripts/carrouselAbout.js";
+
 //Importation des différentes variables nécessaires
-import { Init, requestAbout1, requestAbout2, requestAbout3 } from "../requests.js";
+import { requestAbout1, requestAbout2, requestAbout3 } from "../requests.js";
 import { page404 } from "./404.js";
 
 const aboutPage = {
@@ -17,10 +18,11 @@ const aboutPage = {
 
         //Requêtes parallèles
         Promise.all([
-            fetch(requestAbout1,Init),
-            fetch(requestAbout2,Init),
-            fetch(requestAbout3,Init),
+            fetch(requestAbout1),
+            fetch(requestAbout2),
+            fetch(requestAbout3),
         ])
+        //Utilisation d'async/await pour valider la suite de la promise lorsque toutes les données sont réceptionnées
         .then(async([res1, res2, res3]) => {
             const data1 = await res1.json();
             const data2 = await res2.json();

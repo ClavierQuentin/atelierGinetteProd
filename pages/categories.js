@@ -1,7 +1,7 @@
 /**Page du listing des catégories
  * 1 requête nécessaire, récupérée lors de l'importation du fichier JS
  */
-import { requestCategories, Init } from "../requests.js";
+import { requestCategories } from "../requests.js";
 import { page404 } from "./404.js";
 
 const categories = {
@@ -11,11 +11,14 @@ const categories = {
         const conteneurName = document.getElementById('conteneurName');
 
         //Requête
-        fetch(requestCategories, Init)
+        fetch(requestCategories)
         .then((res) => {
+            //Si la requête passe, on retourne les données sous format JSON
             if(res.ok){
                 return res.json();
-            }else{
+            }
+            //Sinon, on retourne la page 404
+            else{
                 main.innerHTML = page404;
             }
         })

@@ -64,15 +64,21 @@ Array.from(links).forEach(link =>{
     link.addEventListener('click', gestionMenu)
 })
 
-/**Script au submit pour la newsletter */
+
+/**
+ * 
+ * Script au submit pour l'inscription à la newsletter 
+ * 
+ * */
 document.getElementById('newsletterForm').addEventListener('submit', (e) => {
+
     //On récupère l'élément pour le message de retour
     let msg = document.getElementById('msg')
 
     //On empêche le refresh de la page
     e.preventDefault(); 
 
-
+    //Google recaptcha
     grecaptcha.ready(function() {
         grecaptcha.execute('6LepuxohAAAAAChJ_a-bx9KO4nqIfEw8iCt5Jk3y', {action: 'message'}).then(function(token) {
 
@@ -86,14 +92,11 @@ document.getElementById('newsletterForm').addEventListener('submit', (e) => {
             //Création de la requête Fetch
             const headers = new Headers();
             headers.append('Content-Type', 'application/json');
-            const Init = {
-                method: "POST",
-                headers: headers,
-                mode: "cors",
-                cache: "default",
-                body: JSON.stringify(data)
-            }
-            fetch('https://api-atelier.herokuapp.com/api/add-email', Init)
+            headers.append('method', 'GET');
+            headers.append('mode', 'cors');
+            headers.append('cache', 'default');
+
+            fetch('https://api-atelier.herokuapp.com/api/add-email', headers)
             .then((res) => {
                 return res.json();   
             })
@@ -101,14 +104,13 @@ document.getElementById('newsletterForm').addEventListener('submit', (e) => {
                 msg.innerHTML = res.message;
             })
             .catch((err) => {
-                msg.innerHTML = err;;
+                console.log(err);
+                msg.innerHTML = "Une erreur est survenue";
             })
 
         })
 
     })
-
-
 
 })
 

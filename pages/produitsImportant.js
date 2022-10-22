@@ -2,7 +2,7 @@
 
 //Importation de fonctions et variables
 import { page404 } from "./404.js";
-import { requestAccueilProduits, Init } from "../requests.js";
+import { requestAccueilProduits } from "../requests.js";
 
 const produitsImportant = {
     generate: () => {
@@ -12,11 +12,14 @@ const produitsImportant = {
         const conteneurName = document.getElementById('conteneurName');
 
         //Requête
-        fetch(requestAccueilProduits, Init)
+        fetch(requestAccueilProduits)
         .then( (res) => {
+            //Si la requête passe, on retourne les données sous format JSON
             if(res.ok){
                 return res.json();
-            } else{
+            } 
+            //Sinon, on retourne la page 404
+            else{
                 main.innerHTML = page404;
             }
         })
