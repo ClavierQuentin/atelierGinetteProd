@@ -42,7 +42,7 @@ const router = () =>{
 
     //Controle pour le passage au dashboard en back
     if(request.destination == "admin"){
-        location.assign('https://api-atelier-dev-dashboard.herokuapp.com/');
+        location.assign('https://api-atelier.herokuapp.com/');
     }
         
     //On lance la fonction generate() présente dans chaque page JS
