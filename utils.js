@@ -2,10 +2,11 @@
 const parseRequestUrl = () => {
     const url = document.location.hash.toLowerCase();
     const request = url.split("/");
+    console.log(request);
     return{
-        page: request[1],
-        destination: request[2],
-        id: request[3]
+        page: request[0],
+        destination: request[1],
+        id: request[2]
     } ;
 }
 
