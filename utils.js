@@ -1,12 +1,11 @@
 //Fonction pour décomposer l'URL et en contrôler la sortie
 const parseRequestUrl = () => {
-    const url = document.location.hash.toLowerCase();
+    const url = window.location.hash.toLowerCase();
     const request = url.split("/");
-    console.log(request);
     return{
-        page: request[0],
-        destination: request[1],
-        id: request[2]
+        page: request[1],
+        destination: request[2],
+        id: request[3]
     } ;
 }
 

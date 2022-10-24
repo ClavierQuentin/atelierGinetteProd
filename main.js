@@ -30,7 +30,6 @@ const router = () =>{
 
     //On décompose l'url 
     const request = parseRequestUrl();
-
     /**On contrôle l'url et les paramètres qui y sont entrées
      * Si rien n'est indiqué nous forçons avec un champs vide
      * Ainsi on sécurise les routes au minimun
