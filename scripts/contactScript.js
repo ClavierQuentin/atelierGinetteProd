@@ -30,11 +30,14 @@ const contact = () => {
         //Instance de l'entête
         const headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        headers.append('method', 'GET');
+        headers.append('method', 'POST');
         headers.append('mode', 'cors');
         headers.append('cache', 'default');
 
-        fetch(url + 'message', headers)
+        fetch(url + 'message', {
+            headers: headers,
+            body: JSON.stringify(data)
+        })
         .then((res)=>{
             return res.json;
         })
