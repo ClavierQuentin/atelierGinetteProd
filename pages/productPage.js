@@ -3,7 +3,7 @@
  */
 
 //Importations
-import { headers } from "../requests.js";
+import { Init } from "../requests.js";
 import { parseRequestUrl, url } from "../utils.js";
 import { page404 } from "./404.js";
 
@@ -20,9 +20,9 @@ const productPage = {
         //Requêtes parallèles
         Promise.all([
             //Requête pour obtenir les détails du produit
-            fetch(url + `produits/${request.id}`, headers),
+            fetch(url + `produits/${request.id}`, Init),
             //Requête pour obtenir les autres produits de la catégorie
-            fetch(url + `produits/${request.id}/all`, headers)
+            fetch(url + `produits/${request.id}/all`, Init)
         ])
         //Utilisation d'async/await pour valider la suite de la promise lorsque toutes les données sont réceptionnées
         .then(async([res, res2]) => {

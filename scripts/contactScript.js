@@ -30,10 +30,6 @@ const contact = () => {
         //Instance de l'entête
         const headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        // headers.append('method', 'POST');
-        // headers.append('mode', 'cors');
-        headers.append('cache', 'default');
-
         fetch(url + 'message', {
             method: "POST",
             mode:"cors",
