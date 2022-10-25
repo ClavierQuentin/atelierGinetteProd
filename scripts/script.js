@@ -92,11 +92,13 @@ document.getElementById('newsletterForm').addEventListener('submit', (e) => {
             //Création de la requête Fetch
             const headers = new Headers();
             headers.append('Content-Type', 'application/json');
-            headers.append('method', 'POST');
-            headers.append('mode', 'cors');
+            // headers.append('method', 'POST');
+            // headers.append('mode', 'cors');
             headers.append('cache', 'default');
 
             fetch('https://api-atelier.herokuapp.com/api/add-email', {
+                method: "POST",
+                mode:"CORS",
                 headers: headers,
                 body: JSON.stringify(data)
             })
