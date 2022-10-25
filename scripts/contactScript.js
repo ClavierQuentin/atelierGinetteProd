@@ -3,6 +3,9 @@
 //On récupère l'URI
 import { url } from "../utils.js";
 
+const Regex = /^(?!\s*$).+/
+
+
 const contact = () => {
    
     //On récupère l'élément FORM au submit
@@ -25,11 +28,14 @@ const contact = () => {
                 pot:document.getElementById('pot').value     
         }
 
-        if (Regex.IsMatch(subjectString, "^(?!\s*$).+")) {
-            return message.innerHTML = 'erreur'
-        } else {
-            return message.innerHTML= 'ok'
-        }   
+        /**Test avec expression régulière pour éviter les champs d'espaces */
+        if(!data.prenom.match(Regex) || !data.nom.match(Regex) || !data.sujet.match(Regex) || !data.message.match(Regex)){
+            return message.innerHTML = 'Une erreur est survenue'
+        }
+    
+        
+
+
 
         //Création de la requête Fetch
 

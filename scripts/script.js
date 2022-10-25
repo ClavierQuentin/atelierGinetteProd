@@ -95,7 +95,7 @@ document.getElementById('newsletterForm').addEventListener('submit', (e) => {
 
             fetch('https://api-atelier.herokuapp.com/api/add-email', {
                 method: "POST",
-                mode:"CORS",
+                mode:"cors",
                 caches: "default",
                 headers: headers,
                 body: JSON.stringify(data)
