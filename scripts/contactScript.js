@@ -16,14 +16,20 @@ const contact = () => {
 
         //On stocke les valeurs de chaque input
         let data = {
-                'prenom': document.getElementById('prenom').value,
-                'nom': document.getElementById('nom').value,
-                'sujet': document.getElementById('sujet').value,
-                'email': document.getElementById('email').value,
-                'message': document.getElementById('body').value,
-                'token': document.getElementById('recaptcha').value,
-                'pot':document.getElementById('pot').value     
+                prenom: document.getElementById('prenom').value,
+                nom: document.getElementById('nom').value,
+                sujet: document.getElementById('sujet').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('body').value,
+                token: document.getElementById('recaptcha').value,
+                pot:document.getElementById('pot').value     
         }
+
+        if (Regex.IsMatch(subjectString, "^(?!\s*$).+")) {
+            return message.innerHTML = 'erreur'
+        } else {
+            return message.innerHTML= 'ok'
+        }   
 
         //Création de la requête Fetch
 
