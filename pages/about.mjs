@@ -4,11 +4,11 @@
  */
 
 //Importation du script pour le mini carrousel
-import { carrouselAbout } from "../scripts/carrouselAbout.js";
+import { carrouselAbout } from "../scripts/carrouselAbout.mjs";
 
 //Importation des différentes variables nécessaires
-import { requestAbout1, requestAbout2, requestAbout3 } from "../requests.js";
-import { page404 } from "./404.js";
+import { requestAbout1, requestAbout2, requestAbout3 } from "../requests.mjs";
+import { page404 } from "./404.mjs";
 
 const aboutPage = {
     generate : () => {

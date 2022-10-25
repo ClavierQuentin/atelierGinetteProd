@@ -3,8 +3,8 @@
  */
 
 //Importation du script pour le carrousel et de la variable pour l'URI et des requêtes
-import { fonctionCarrousel } from "../scripts/carrousel.js";
-import { requestAccueilCategories, requestAccueilProduits, requestAccueilTexts } from "../requests.js";
+import { fonctionCarrousel } from "../scripts/carrousel.mjs";
+import { requestAccueilCategories, requestAccueilProduits, requestAccueilTexts } from "../requests.mjs";
 
 const homePage = {
     generate : () => {

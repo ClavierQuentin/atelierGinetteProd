@@ -1,13 +1,16 @@
-/*Installation des 2 polices spéciales*/
+/*Installation polices spéciales*/
 @font-face {
     font-family: 'Angella';
     src: url('../fonts/angella-white-font/AngellaWhitePersonalUseFont-ywA8e.otf');
 }
-@font-face {
+
+
+/* @font-face {
     font-family: 'Garet';
     src: url("../fonts/garet.book.otf"),
         url("../fonts/garet.book.ttf");
-}
+} */
+
 /*Margin 0 sur tous les éléments*/
 *{
     margin: 0;

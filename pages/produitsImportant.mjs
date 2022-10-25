@@ -1,14 +1,10 @@
-/**Page de listing des produits selon une catégorie */
+/**Page des produits mis en avant */
 
 //Importation de fonctions et variables
-import { Init } from "../requests.js";
-import { parseRequestUrl,url } from "../utils.js";
-import { page404 } from "./404.js";
+import { page404 } from "./404.mjs";
+import { requestAccueilProduits } from "../requests.mjs";
 
-//On décompose l'url pour récupérer l'id
-const request = parseRequestUrl();
-
-const produits = {
+const produitsImportant = {
     generate: () => {
         
         //On récupère les éléments HTML
@@ -16,7 +12,7 @@ const produits = {
         const conteneurName = document.getElementById('conteneurName');
 
         //Requête
-        fetch(url + `categories/${request.id}/produits`, Init)
+        fetch(requestAccueilProduits)
         .then( (res) => {
             //Si la requête passe, on retourne les données sous format JSON
             if(res.ok){
@@ -36,7 +32,7 @@ const produits = {
 
                     <!--TITRE DE LA CATEGORIE-->
                     <div class="titreProduits">
-                        <h3>${produits[0].categorie.nom_categorie} :</h3>
+                        <h3>Produits mis en vedette :</h3>
                     </div>
 
                     <!--PRODUITS-->
@@ -45,7 +41,7 @@ const produits = {
                             produit =>`
                                     <a href="#/pages/produit/${produit.id}" onclick="" class="cardProduit">
                                         <div class="conteneurImgProduit">
-                                            <img class="imgProduit" src="${produit.url_image_produit}" alt="${produit.nom_produit}">
+                                            <img class="imgProduit" src="${produit.url_image_produit}" alt="">
                                         </div>
                                         <label>${produit.nom_produit}</label>
                                         <label>${produit.prix_produit}€</label>
@@ -66,4 +62,5 @@ const produits = {
         })
     }
 }
-export default produits;
+
+export default produitsImportant;

@@ -4,7 +4,7 @@
  */
 
 //Importation du script pour l'envoie des données du formulaire et de l'URI
-import { contact } from "../scripts/contactScript.js";
+import { contact } from "../scripts/contactScript.mjs";
 
 const contactPage = {
     generate: () =>{

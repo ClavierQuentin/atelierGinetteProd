@@ -1,7 +1,7 @@
 /**Fonctions pour différentes requêtes au back */
 
 //On récupère l'URI de l'API
-import { url } from "./utils.js"; 
+import { url } from "./utils.mjs"; 
 
 //Instance du header de la requète
 const headers = new Headers();

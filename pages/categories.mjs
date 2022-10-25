@@ -1,8 +1,8 @@
 /**Page du listing des catégories
  * 1 requête nécessaire, récupérée lors de l'importation du fichier JS
  */
-import { requestCategories } from "../requests.js";
-import { page404 } from "./404.js";
+import { requestCategories } from "../requests.mjs";
+import { page404 } from "./404.mjs";
 
 const categories = {
     generate: () => {

@@ -1,14 +1,14 @@
 /**Importation des différentes pages pour l'affichage dynamique */
-import aboutPage from "./pages/about.js";
-import categories from "./pages/categories.js";
-import contactPage from "./pages/contact.js";
-import homePage from "./pages/home.js";
-import productPage from "./pages/productPage.js";
-import produits from "./pages/produits.js";
-import produitsImportant from "./pages/produitsImportant.js";
+import aboutPage from "./pages/about.mjs";
+import categories from "./pages/categories.mjs";
+import contactPage from "./pages/contact.mjs";
+import homePage from "./pages/home.mjs";
+import productPage from "./pages/productPage.mjs";
+import produits from "./pages/produits.mjs";
+import produitsImportant from "./pages/produitsImportant.mjs";
 
 /**Fonction pour décomposer l'url */
-import { parseRequestUrl } from "./utils.js";
+import { parseRequestUrl } from "./utils.mjs";
 
 /**Déclaration des routes et des url possibles */
 const routes = {

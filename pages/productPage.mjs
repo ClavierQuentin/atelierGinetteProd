@@ -3,9 +3,9 @@
  */
 
 //Importations
-import { Init } from "../requests.js";
-import { parseRequestUrl, url } from "../utils.js";
-import { page404 } from "./404.js";
+import { Init } from "../requests.mjs";
+import { parseRequestUrl, url } from "../utils.mjs";
+import { page404 } from "./404.mjs";
 
 //Je récupère les différents paramètre de l'url
 const request = parseRequestUrl();

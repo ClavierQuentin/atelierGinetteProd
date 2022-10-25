@@ -1,7 +1,7 @@
 /**Script pour l'envoie du formulaire */
 
 //On récupère l'URI
-import { url } from "../utils.js";
+import { url } from "../utils.mjs";
 
 const Regex = /^(?!\s*$).+/
 

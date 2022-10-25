@@ -1,10 +1,14 @@
-/**Page des produits mis en avant */
+/**Page de listing des produits selon une catégorie */
 
 //Importation de fonctions et variables
-import { page404 } from "./404.js";
-import { requestAccueilProduits } from "../requests.js";
+import { Init } from "../requests.mjs";
+import { parseRequestUrl,url } from "../utils.mjs";
+import { page404 } from "./404.mjs";
 
-const produitsImportant = {
+//On décompose l'url pour récupérer l'id
+const request = parseRequestUrl();
+
+const produits = {
     generate: () => {
         
         //On récupère les éléments HTML
@@ -12,7 +16,7 @@ const produitsImportant = {
         const conteneurName = document.getElementById('conteneurName');
 
         //Requête
-        fetch(requestAccueilProduits)
+        fetch(url + `categories/${request.id}/produits`, Init)
         .then( (res) => {
             //Si la requête passe, on retourne les données sous format JSON
             if(res.ok){
@@ -32,7 +36,7 @@ const produitsImportant = {
 
                     <!--TITRE DE LA CATEGORIE-->
                     <div class="titreProduits">
-                        <h3>Produits mis en vedette :</h3>
+                        <h3>${produits[0].categorie.nom_categorie} :</h3>
                     </div>
 
                     <!--PRODUITS-->
@@ -41,7 +45,7 @@ const produitsImportant = {
                             produit =>`
                                     <a href="#/pages/produit/${produit.id}" onclick="" class="cardProduit">
                                         <div class="conteneurImgProduit">
-                                            <img class="imgProduit" src="${produit.url_image_produit}" alt="">
+                                            <img class="imgProduit" src="${produit.url_image_produit}" alt="${produit.nom_produit}">
                                         </div>
                                         <label>${produit.nom_produit}</label>
                                         <label>${produit.prix_produit}€</label>
@@ -62,5 +66,4 @@ const produitsImportant = {
         })
     }
 }
-
-export default produitsImportant;
+export default produits;
