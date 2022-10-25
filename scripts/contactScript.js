@@ -36,8 +36,9 @@ const contact = () => {
 
         fetch(url + 'message', {
             method: "POST",
-            mode:"CORS",
+            mode:"cors",
             headers: headers,
+            cache:"default",
             body: JSON.stringify(data)
     })
         .then((res)=>{
