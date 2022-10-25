@@ -40,9 +40,9 @@ const contact = () => {
             headers: headers,
             cache:"default",
             body: JSON.stringify(data)
-    })
+        })
         .then((res)=>{
-            return res.json;
+            return res.json();
         })
         .then((res) => {
             //On retourne le message fourni par le serveur
