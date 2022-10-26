@@ -6,7 +6,7 @@ import { url } from "../utils.mjs";
 const Regex = /^(?!\s*$).+/
 
 
-const contact = () => {
+export const contact = () => {
    
     //On récupère l'élément FORM au submit
     document.getElementById('contactForm').addEventListener('submit', (e) => {   
@@ -65,4 +65,4 @@ const contact = () => {
 }
 
 
-export { contact };
+// export { contact };

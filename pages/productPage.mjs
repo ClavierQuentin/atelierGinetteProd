@@ -10,7 +10,7 @@ import { page404 } from "./404.mjs";
 //Je récupère les différents paramètre de l'url
 const request = parseRequestUrl();
 
-const productPage = {
+export const productPage = {
     generate: () =>{
         
         //On récupère les éléments HTML
@@ -110,4 +110,4 @@ const productPage = {
         }) 
     }
 }
-export default productPage;
+// export { productPage };

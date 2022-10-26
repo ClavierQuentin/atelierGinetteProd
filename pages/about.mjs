@@ -7,10 +7,10 @@
 import { carrouselAbout } from "../scripts/carrouselAbout.mjs";
 
 //Importation des différentes variables nécessaires
-import { requestAbout1, requestAbout2, requestAbout3 } from "../requests.mjs";
+ 
 import { page404 } from "./404.mjs";
 
-const aboutPage = {
+export const aboutPage = {
     generate : () => {
         //On récupère les différents éléments HTML
         let main = document.getElementById('main-conteneur');
@@ -86,7 +86,7 @@ const aboutPage = {
                 <div class="banniere wrapReverse" style="padding-bottom: 80px;">
                     <!--IMAGE-->
                     <div>
-                        <img style=" height:500px;" src="${ban3.url_image_2}" alt="${ban3.titre_2}">
+                        <img class="imgDeuxBanDeux" style=" height:500px;" src="${ban3.url_image_2}" alt="${ban3.titre_2}">
                     </div>
                     <div class="divTexte">
                         <!--TITRE-->
@@ -112,4 +112,4 @@ const aboutPage = {
     }
 }
 
-export default aboutPage;
+// export { aboutPage };

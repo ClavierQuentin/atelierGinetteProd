@@ -30,6 +30,9 @@
     .wrapReverse{
         flex-wrap: wrap-reverse;
     }
+    .imgDeuxBanDeux{
+        height: 500px;
+    }
 /*--------------------------Responsive------------------*/
 @media screen  and (max-width:400px){
     .divTexte p{
@@ -38,17 +41,21 @@
     .divTexte{
         width: 100%;
     }
-    .portrait img{
+    .divTexte h2{
+        text-align: center;
+    }
+    .portrait img, .paysage, .conteneurCarrousel, .imgDeuxBanDeux{
         display: none;
     }
-    .paysage{
+    /* .paysage{
         display: none;
     }
     .conteneurCarrousel{
         display: none;
-    }
+    } */
+
 }
-@media screen  and (min-width:600px) and (max-width:900px){
+@media screen  and (min-width:400px) and (max-width:900px){
     .divTexte p{
         width: 90%;
     }

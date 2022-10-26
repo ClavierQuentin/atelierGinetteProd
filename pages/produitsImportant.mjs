@@ -4,7 +4,7 @@
 import { page404 } from "./404.mjs";
 import { requestAccueilProduits } from "../requests.mjs";
 
-const produitsImportant = {
+export const produitsImportant = {
     generate: () => {
         
         //On récupère les éléments HTML
@@ -63,4 +63,4 @@ const produitsImportant = {
     }
 }
 
-export default produitsImportant;
+// export { produitsImportant };

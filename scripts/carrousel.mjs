@@ -1,18 +1,19 @@
-/**Fonction pour créer le carrousel de la page d'accueil */
+/**Fonction pour créer le carrousel de la page d'accueil 
+ * @param {array} data An array of images urls
+*/
 
 export const fonctionCarrousel = (data) => {
 
-        //On récupère la liste des données
-        const listeCategories = data;
 
         //Création d'un tableau vide
         let listeCarrou = [];
 
         //On boucle la liste des données pour ne récupérer que 2 éléments que l'on sauvegarde dans le tableau vide
-        for(let i = 0; i < listeCategories.length; i++){
+        for(let i = 0; i < data.length; i++){
             listeCarrou.push({
-                url: listeCategories[i].url_image_produit,
-                id: listeCategories[i].id,
+                url: data[i].url_image_produit,
+                id: data[i].id,
+                name: data[i].nom_produit
             });
         }
 
@@ -34,8 +35,8 @@ export const fonctionCarrousel = (data) => {
                 //On y modifie l'id et src selon le array
                 photo.src = listeCarrou[i].url;
                 photo.id = listeCarrou[i].id;
-                //On donne à l'image la largeur de l'écran
-                photo.style.minWidth = largeurEcran+"px";
+                photo.alt = listeCarrou[i].name;
+
                 photo.classList.add('tailleImg')
                 //On rajoute l'image au carrousel
                 carrousel.appendChild(photo);

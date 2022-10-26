@@ -6,7 +6,7 @@
 import { fonctionCarrousel } from "../scripts/carrousel.mjs";
 import { requestAccueilCategories, requestAccueilProduits, requestAccueilTexts } from "../requests.mjs";
 
-const homePage = {
+export const homePage = {
     generate : () => {
 
         //Récupération des éléments HTML
@@ -126,4 +126,4 @@ const homePage = {
     }    
 }
 
-export default homePage;
+// export { homePage };

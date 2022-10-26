@@ -1,6 +1,6 @@
 /**Fonction pour le mini carrousel sur la page About */
 
-const carrouselAbout = (data) => {
+export const carrouselAbout = (data) => {
 
     //On récupère le tableau d'urls stocké dans data
     const listeImages = data.urls ;
@@ -41,4 +41,4 @@ const carrouselAbout = (data) => {
     setInterval(slide,6000);
 }
 
-export {carrouselAbout};
+// export {carrouselAbout};

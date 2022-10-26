@@ -8,7 +8,7 @@ import { page404 } from "./404.mjs";
 //On décompose l'url pour récupérer l'id
 const request = parseRequestUrl();
 
-const produits = {
+export const produits = {
     generate: () => {
         
         //On récupère les éléments HTML
@@ -66,4 +66,4 @@ const produits = {
         })
     }
 }
-export default produits;
+// export { produits };

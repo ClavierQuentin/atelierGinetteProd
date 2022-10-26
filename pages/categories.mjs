@@ -4,7 +4,7 @@
 import { requestCategories } from "../requests.mjs";
 import { page404 } from "./404.mjs";
 
-const categories = {
+export const categories = {
     generate: () => {
         //On récupère les éléments HTML
         let main = document.getElementById('main-conteneur');
@@ -64,4 +64,4 @@ const categories = {
     }
 }
 
-export default categories;
+// export  { categories };

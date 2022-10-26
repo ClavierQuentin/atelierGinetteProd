@@ -1,11 +1,11 @@
 /**Importation des différentes pages pour l'affichage dynamique */
-import aboutPage from "./pages/about.mjs";
-import categories from "./pages/categories.mjs";
-import contactPage from "./pages/contact.mjs";
-import homePage from "./pages/home.mjs";
-import productPage from "./pages/productPage.mjs";
-import produits from "./pages/produits.mjs";
-import produitsImportant from "./pages/produitsImportant.mjs";
+import { aboutPage } from "./pages/about.mjs";
+import { categories } from "./pages/categories.mjs";
+import { contactPage } from "./pages/contact.mjs";
+import { homePage } from "./pages/home.mjs";
+import { productPage } from "./pages/productPage.mjs";
+import { produits } from "./pages/produits.mjs";
+import { produitsImportant } from "./pages/produitsImportant.mjs";
 
 /**Fonction pour décomposer l'url */
 import { parseRequestUrl } from "./utils.mjs";

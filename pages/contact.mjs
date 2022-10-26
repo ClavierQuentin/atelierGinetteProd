@@ -6,7 +6,7 @@
 //Importation du script pour l'envoie des données du formulaire et de l'URI
 import { contact } from "../scripts/contactScript.mjs";
 
-const contactPage = {
+export const contactPage = {
     generate: () =>{
 
         //A l'ouverture de la page, réception du token de google
@@ -58,4 +58,4 @@ const contactPage = {
         })
     }
 }
-export default contactPage;
+// export { contactPage };
