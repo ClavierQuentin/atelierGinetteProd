@@ -2,6 +2,7 @@
  * 3 requêtes nécessaires pour avoir toutes les informations pour la page
  * Utilisation du constructeur des Promises et de l'asyncronicité de JS pour effectuer les requêtes fetch en parallèles
  */
+import { requestAbout1, requestAbout2, requestAbout3 } from "../requests.mjs";
 
 //Importation du script pour le mini carrousel
 import { carrouselAbout } from "../scripts/carrouselAbout.mjs";

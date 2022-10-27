@@ -47,12 +47,6 @@
     .portrait img, .paysage, .conteneurCarrousel, .imgDeuxBanDeux{
         display: none;
     }
-    /* .paysage{
-        display: none;
-    }
-    .conteneurCarrousel{
-        display: none;
-    } */
 
 }
 @media screen  and (min-width:400px) and (max-width:900px){
