@@ -1,5 +1,11 @@
 /pages /#/pages
 
+/about /#/pages/about
+
+/categories /#/pages/categories
+
+/produits /#/pages/categories
+
 /admin /#/pages/admin
 
 /* /#
