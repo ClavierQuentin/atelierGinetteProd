@@ -37,6 +37,9 @@ export const fonctionCarrousel = (data) => {
                 photo.id = listeCarrou[i].id;
                 photo.alt = listeCarrou[i].name;
 
+                //On donne à l'image la largeur de l'écran
+                photo.style.minWidth = largeurEcran+"px";
+                
                 photo.classList.add('tailleImg')
                 //On rajoute l'image au carrousel
                 carrousel.appendChild(photo);
