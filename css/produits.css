@@ -6,6 +6,9 @@
     margin-left: 5%;
     margin-bottom: 2%;
 }
+.titreProduits h3{
+    text-align: center;
+}
 .cardsProduits{
     width: 90%;
     margin: auto;
@@ -91,7 +94,7 @@
     margin:  35px;
 }   
 .prix{
-    text-align: end;
+    text-align: center;
     margin: 35px;
     font-size: 20px;
 }
@@ -128,17 +131,20 @@ hr{
 /*Partie produits équvalents*/
 
 .titreProduitEquivalent{
-    margin-left: 5%;
+    text-align: center;
 }
 .produits{
     width: 50%;
     margin: 2% auto;
     padding-bottom: 20px;
+    display: flex;
+    gap: 5%;
 }
 
 .produitEquivalent{
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
     gap: 2%;
     padding: 20px 0;
 }

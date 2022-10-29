@@ -14,8 +14,6 @@
 /*Margin 0 sur tous les éléments*/
 *{
     margin: 0;
-    font-family: 'Playfair Display', serif;
-    font-weight: lighter;
 }
 
 /*---------Classes globales--------*/
@@ -23,10 +21,12 @@ body{
     position: relative;
     /* font-family: 'Garet'; */
     background-color: #f8cbc6;
+    font-family: 'Playfair Display', serif;
+
 }
 h2, h3, h4, h5{
-    /* font-family: 'Playfair Display', serif;
-    font-weight: lighter; */
+    /* font-family: 'Playfair Display', serif;*/
+    font-weight: lighter; 
     font-size: 1.6rem;
 }
 a{
