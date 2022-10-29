@@ -76,32 +76,40 @@ export const productPage = {
                         ${produit.description_longue_produit}
                     </div>
 
-                    <hr>
+                    
 
-                    <div>
+                    <div id ="equivalence">
                     <!--BLOC PRODUIT EQUIVALENT-->
-                        <h3 class="titreProduitEquivalent">Vous pourriez aussi aimer :</h3>
-                        <div class="produits">
-                            ${produits.map(
-                                produit=>`
-                                    <div class="produitEquivalent">
-                                        <div class="labels">
-                                            <label>${produit.nom_produit}</label>
-                                            <label>${produit.prix_produit}€</label>
-                                        </div>
 
-                                        <a  href="#/pages/produit/${produit.id}" >
-                                            <div class="conteneurImgProduitEquivalent">
-                                                <img class="imgProduitEquivalent" src="${produit.url_image_produit}" alt="${produit.nom_produit}">
-                                            </div>
-                                        </a>
-                                    </div>
-                                `
-                            ).join('\n')}
-                        </div>
                     </div>
                 </div>
             `
+            let equivalence = document.getElementById('equivalence');
+            
+            if(produits.length > 0){
+                equivalence.innerHTML = `
+                <hr>    
+                <h3 class="titreProduitEquivalent">Vous pourriez aussi aimer :</h3>
+                <div class="produits">
+                    ${produits.map(
+                        produit=>`
+                            <div class="produitEquivalent">
+                                <div class="labels">
+                                    <label>${produit.nom_produit}</label>
+                                    <label>${produit.prix_produit}€</label>
+                                </div>
+
+                                <a  href="#/pages/produit/${produit.id}" >
+                                    <div class="conteneurImgProduitEquivalent">
+                                        <img class="imgProduitEquivalent" src="${produit.url_image_produit}" alt="${produit.nom_produit}">
+                                    </div>
+                                </a>
+                            </div>
+                        `
+                    ).join('\n')}
+                </div>
+                `
+            }
             conteneurName.style.position = "relative";    
         })
         .catch((err)=>{
