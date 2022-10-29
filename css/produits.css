@@ -71,8 +71,7 @@
 
 /*----------Page Produit--------------*/
 .imgProduitUnique{
-    width: 305px;
-    height: 400px;
+    height: 700px;
     object-fit: cover;
     margin: 10px 0;
 }
@@ -83,6 +82,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    padding-top: 3%;
 }
 .description1{
     width: 40%;
