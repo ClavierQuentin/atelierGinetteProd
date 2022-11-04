@@ -5,6 +5,7 @@
 //Importation du script pour le carrousel et de la variable pour l'URI et des requêtes
 import { fonctionCarrousel } from "../scripts/carrousel.mjs";
 import { requestAccueilCategories, requestAccueilProduits, requestAccueilTexts } from "../requests.mjs";
+import { page404 } from "./404.mjs";
 
 export const homePage = {
     generate : () => {
