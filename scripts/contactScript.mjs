@@ -12,7 +12,12 @@ export const contact = () => {
     document.getElementById('contactForm').addEventListener('submit', (e) => {   
         
         //On récupère l'élément HTML 
-        let message = document.getElementById('message');  
+        let message = document.getElementById('message'); 
+        let checkboxNewsletter = document.getElementById('newsletter');
+        let newsletter = 0;
+        if(checkboxNewsletter.checked){
+            newsletter = 1;
+        } 
 
         //On empêche le refresh de la page
         e.preventDefault(); 
@@ -25,7 +30,8 @@ export const contact = () => {
                 email: document.getElementById('email').value,
                 message: document.getElementById('body').value,
                 token: document.getElementById('recaptcha').value,
-                pot:document.getElementById('pot').value     
+                pot:document.getElementById('pot').value ,
+                newsletter: newsletter    
         }
 
         /**Test avec expression régulière pour éviter les champs d'espaces */
@@ -33,10 +39,6 @@ export const contact = () => {
             return message.innerHTML = 'Une erreur est survenue'
         }
     
-        
-
-
-
         //Création de la requête Fetch
 
         //Instance de l'entête

@@ -41,6 +41,11 @@ export const contactPage = {
 
                                 <input name="pot" class="visually-hidden" tabindex="-1" autocomplete="off" id="pot">
 
+                                <div>
+                                    <input type="checkbox" name = "newsletter" id="newsletter" >
+                                    <label for="newsletter"> M'inscrire à la newsletter</label>
+                                </div>
+
                                 <div class="divRGPD">
                                         <input required type="checkbox" name="rgpd" id="rgpd" >
                                         <label for="rgpd">J'autorise ce site à conserver mes données personnelles transmises via ce formulaire. Aucune exploitation commerciale ne sera faite des données conservées</label>
