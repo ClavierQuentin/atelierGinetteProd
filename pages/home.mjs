@@ -29,7 +29,6 @@ export const homePage = {
         })
         //On décompose la réponse en différentes variables pour les utiliser indépendamment
         .then((data) =>{
-
             //liste des produits à mettre sur la banniere/carrousel
             const listImg = data[0];
             //Liste des catégories mises en avant

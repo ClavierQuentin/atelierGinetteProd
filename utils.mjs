@@ -9,8 +9,31 @@ const parseRequestUrl = () => {
     } ;
 }
 
+//Déclaration fonction pour test des requêtes
+const dataTest = (ban, data) => {
+    switch (data.status) {
+        case false:
+            ban = {
+                titre: 'Une erreur est survenue',
+                texte: 'Une erreur est survenue',
+            }
+            break;
+    
+        case true : 
+            ban = data
+            break;
+            
+        default:
+            ban = data
+            break;
+    }
+
+    return ban
+}
+
+
 //URI pour requêtes
 const url = "https://api-atelier.herokuapp.com/api/";
 // const url ="http://127.0.0.1:8000/api/";
 
-export { parseRequestUrl, url };
+export { parseRequestUrl, url, dataTest };

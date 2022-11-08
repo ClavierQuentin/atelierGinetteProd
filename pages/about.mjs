@@ -11,6 +11,8 @@ import { carrouselAbout } from "../scripts/carrouselAbout.mjs";
  
 import { page404 } from "./404.mjs";
 
+import { dataTest } from "../utils.mjs";
+
 export const aboutPage = {
     generate : () => {
         //On récupère les différents éléments HTML
@@ -32,11 +34,16 @@ export const aboutPage = {
         })
         //On récupère les réponses sous format Json
         .then((data) => {
-            
-            //On décompose le tableau de réponse pour utilisation 
-            const ban1 = data[0];
-            const ban2 = data[1];
-            const ban3 = data[2];
+
+            //Déclaration des variables
+            let ban1;
+            let ban2;
+            let ban3;
+
+            //Test si requête aboutie
+            ban1 = dataTest(ban1, data[0])
+            ban2 = dataTest(ban2, data[1])
+            ban3 = dataTest(ban3, data[2])
 
             //On transforme le contenu HTML du conteneur
             main.innerHTML = `
